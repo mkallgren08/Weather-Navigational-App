@@ -40,7 +40,7 @@
 	  		text-align: center;
 	  	}
 
-	  	.launchBtn {
+	  	.launchBtn, .newLaunch, .quit {
 	  		width: 120px;
 	  		margin-top: 20px;
 	  		font-size: 20px;
@@ -49,6 +49,20 @@
 	  		border: black 2px solid;
 	  		position: absolute;
 	  		left: 37%;
+	  	}
+
+	  	.newLaunch {
+	  		top: 77%;
+	  		left: 0px;
+	  		width: 100%;
+	  		margin-bottom: 20%;
+
+	  	}
+
+	  	.quit {
+	  		left: 0px;
+	  		width: 100%;
+			top: 90%;
 	  	}
 
 	  	a {
@@ -72,10 +86,39 @@
 	  	}
 
 	  	.console {
+	  		font-size: 35px;
 	  		position: absolute;
 	  		bottom: 0px;
 	  		height: 80px;
 	  		background:#b3ccff;
 	  		width: 100%;
-	  		padding: 30px;
+	  		padding: 20px;
 	  	}
+
+	  	#done {
+	  		color: black;
+	  	}
+
+	  	#ratePrompt {
+	  		font-size: 30px;
+	  	}
+
+	  	#rateImg {
+	  		height: 90px;
+	  		/*width: 100px;*/
+	  	}
+
+	  	.rating {
+	  		color: gold;
+	  		text-align: center;
+	  		font-size: 60px;
+	  		margin-top: 10%;
+			  unicode-bidi: bidi-override;
+			  direction: rtl;
+			}
+			.rating > span:hover:before,
+			.rating > span:hover ~ span:before {
+			   content: "\2605";
+			   position: absolute;
+			}
+			}

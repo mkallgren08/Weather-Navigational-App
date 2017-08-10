@@ -1,0 +1,50 @@
+body {
+	  		background-image: url(https://t4.ftcdn.net/jpg/00/68/82/57/240_F_68825774_isOmOjQrm2sHgPeO5j1dmP8tGKBpT6j1.jpg);
+	  		background-size: 100% 100%;
+	  		background-repeat: no-repeat;
+	  		padding: 8% 20%;
+	  	}
+
+		.mainContainer {
+			
+			height: 450px;
+			width: 450px;
+			background: white;
+			position: relative;
+			/*left: 0%;*/
+
+		}
+
+	  	input {
+	  		border-top: none;
+	  		border-left: none;
+	  		border-right: none;
+	  		width: 100%;
+	  		height: 60px;
+	  		padding: 15px;
+	  	}
+
+	  	.title{
+			/*background-image: url(http://www.uidownload.com/files/396/851/695/blue-background-shading-vector.jpg);*/
+			background: linear-gradient(to right, white, #99ebff, white);
+			background-repeat: no-repeat;
+			padding:2%; 
+			margin-bottom: 20px;
+			font-size: 45px;
+
+	  	}
+
+	  	.center {
+	  		text-align: center;
+	  	}
+
+	  	.launchBtn {
+	  		width: 120px;
+	  		margin-top: 20px;
+	  		font-size: 20px;
+	  		padding: 15px;
+	  		/*border-radius: 50%;*/
+	  		border: black 2px solid;
+	  		position: absolute;
+	  		left: 37%;
+	  	}

@@ -1,0 +1,78 @@
+			WEATHER ID LIST AND ICONS
+======================================================================
+
+https://openweathermap.org/weather-conditions
+
+How to get icon url:
+
+for code 501 - moderate rain icon = "10d"
+URL:
+
+https://openweathermap.org/img/w/10d.png
+
+So.... general form is
+var iconID = response.weather.icon
+
+var iconURL = "https://openweathermap.org/img/w/" + iconID + ".png"
+
+<img class = "weatherIcon" href = iconURL>
+
+Basic Weather Groups and their ids:		Number of Groups for Avatar(?)
+-------------------------------------------
+
+200s - Thunderstorms						3
+
+	Notes: three main subsets:
+	1) THUNDERSTORM (LITTLE-NO RAIN)
+	2) THUNDERSTORM WITH RAIN
+	3) THUNDERSTORM WITH DRIZZLE
+
+
+300s - Drizzle							0
+	Notes: includes numerous RAIN subsets			
+	1) DRIZZLE (LIGHT RAIN)				(rain avatars work too)
+	2) SPITTING RAIN (HEAVY DRIZZLE)
+
+500s - Rain							2
+	Notes: two main subsets - 
+	1) RAIN
+	2) FREEZING RAIN	
+
+
+600s - Snow
+	Notes: Includes three main subsets:			3
+	1) SNOW
+	2) SLEET
+	3) RAIN/SNOW MIX
+
+700s - Atmospheric Issues					2-8 (how specific do we want to get?)
+	Notes: Two broad categories here:
+	1) PARTICULATE MATTER (smoke, mist, haze, sand, fog)
+	2) EXTREME WINDS (squalls, tornadoes)
+
+
+800 - All Clear							1
+	1) CLEAR
+
+800+s - Clouds							2
+	Notes: Two Broad groups
+	1) SCATTERED/BROKEN CLOUDS
+	2) OVERCAST
+
+900-906 - Extreme Weather (no icons)				4				
+	Notes: Tornado and heavy winds covered by the 700s
+	Other groups include:
+	1) TROPICAL STORMS/HURRICANES
+	2) COLD
+	3) HOT
+	4) HAIL
+
+900s - Additional (no icons)					1?
+	Pretty much everything is covered by the other groups,
+	except possibly "breezes"
+						
+
+TOTAL AVATAR GUESSTIMATE: 20? Suggested making one avatar that we can then 
+edit with different backgrounds/positioned icons to represent accessories?
+
+

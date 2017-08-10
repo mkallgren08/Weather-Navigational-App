@@ -8,14 +8,28 @@ var finishLocation = "";
 
 //Function for retrieving ajax data from google directions map api based on user input for start and finish locations
 function googleDirectionApiCall () {
-	var queryURL = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startLocation + "&destination=" +
+	var queryURLDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startLocation + "&destination=" +
 				 finishLocation + "&key=AIzaSyCI-Q45nsEkZDVBrp2I8NB2cTTqK_hhgrg";
 	$.ajax({
-		url: queryURL,
+		url: queryURLDirections,
 		method: "GET"
 	}).done(function(response) {
 	console.log(response)
 	})
+}
+
+function googleMapEmbedCall () {
+	var queryURLMaps = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyCI-Q45nsEkZDVBrp2I8NB2cTTqK_hhgrg&origin=" + startLocation
+					+ "&destination=" + finishLocation
+	$.ajax( {
+		url: queryURLMaps,
+		method: "GET"
+	}).done(function(response) {
+		console.log(response)
+		console.log(queryURLMaps)
+		$("#mapLocation").attr("src", queryURLMaps)
+	})
+	
 }
 
 //On click event for startpages launch function which will log the start location and finish location as variables. 
@@ -26,4 +40,10 @@ $("#launch").on("click", function() {
 	
 	//running ajax command for retrieval of google direction maps api after user input variables have been saved.
 	googleDirectionApiCall()
+
+
+	//running ajax command for retreival of google maps embed map
+	googleMapEmbedCall()
+
+
 })

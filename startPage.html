@@ -13,7 +13,7 @@
   
 	  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-
+	  
 	  
 </head>
 <body>
@@ -32,24 +32,6 @@
   		<a href="mapPage.html"><button class="btn-primary launchBtn" id="launch" onclick="lanch()">Launch</button></a>
 	</div>
 
-	<script type="text/javascript">
-
-	var database = firebase.database();
-
-		launch() {
-			var date = $("#date").val().trim();
-			var time = $("#time").val().trim();
-			var sLocation = $("#startLocation").val().trim();
-			var fLocation = $("#finishLocation").val().trim();
-
-
-			database.ref().push({
-				addedDate: date,
-				addedTime: time,
-				addedStartLocation: sLocation,
-				addedFinishLocation: fLocation
-			});
-		}
-	</script>
+	<script src="assets/javascript/javascript.js"></script>
 </body>
 </html>

@@ -13,29 +13,26 @@
   
 	  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-
+	  
 	  
 </head>
-<body style="padding: 8% 20%;">
+<body>
 	<div class="container mainContainer">
 		<div class="title">
   		<h1 class="center">Title</h1>
 		</div>
-		<h3>Start Location</h3>
-  		<input class="city" type="text" name="city" placeholder="Charlotte">
-  		<input class="state" type="text" placeholder="NC">
+  		<input id="date" type="text" name="date" placeholder="MM/DD/YYYY">
   		<br>
-  		<h3>Ending Location</h3>
-  		<input class="city" type="text" name="state" placeholder="Washington">
-  		<input class="state" type="text" placeholder="DC">
+  		<input id="time" type="text" name="time" placeholder="12:30pm">
+  		<br>
+  		<input id="startLocation" type="text" name="start" placeholder="Charlotte, North Carolina">
+  		<br>
+  		<input id="finishLocation" type="text" name="finsh" placeholder="Washington, D.C.">
   		<br>
   		<!-- <a href="mapPage.html"> -->
-  		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->
+  		<button class="btn-primary launchBtn" id="launch">Launch</button>
+  		<!-- </a> -->
 	</div>
-	
-	<!-- Placeholder for map embed.  Will be injected with src on submit button click -->
-	<iframe width='600' height='600' frameborder= '0' style='border:0' id="mapLocation"></iframe>	
-
-<script src="assets/javascript/javascript.js"></script>
+	<script src="assets/javascript/javascript.js"></script>
 </body>
 </html>

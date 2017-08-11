@@ -21,37 +21,21 @@
 		<div class="title">
   		<h1 class="center">Title</h1>
 		</div>
-  		<input id="date" type="text" name="date" placeholder="MM/DD/YYYY">
+		<h3>Start Location</h3>
+  		<input class="city" type="text" name="city" placeholder="Charlotte">
+  		<input class="state" type="text" placeholder="NC">
   		<br>
-  		<input id="time" type="text" name="time" placeholder="12:30pm">
-  		<br>
-  		<input id="city" type="text" name="city" placeholder="Charlotte, North Carolina">
-  		<br>
-  		<input id="state" type="text" name="state" placeholder="Washington, D.C.">
+  		<h3>Ending Location</h3>
+  		<input class="city" type="text" name="state" placeholder="Washington">
+  		<input class="state" type="text" placeholder="DC">
   		<br>
   		<!-- <a href="mapPage.html"> -->
   		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->
 	</div>
+	
+	<!-- Placeholder for map embed.  Will be injected with src on submit button click -->
 	<iframe width='600' height='600' frameborder= '0' style='border:0' id="mapLocation"></iframe>	
-<!-- 	<script type="text/javascript">
 
-	var database = firebase.database();
-
-		launch() {
-			var date = $("#date").val().trim();
-			var time = $("#time").val().trim();
-			var city = $("#city").val().trim();
-			var state = $("#state").val().trim();
-
-
-			database.ref().push({
-				addedDate: date,
-				addedTime: time,
-				addedCity: city,
-				addedState: state
-			});
-		}
-	</script> -->
 <script src="assets/javascript/javascript.js"></script>
 </body>
 </html>

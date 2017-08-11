@@ -18,15 +18,26 @@
 			position: relative;
 			/*left: 0%;*/
 		}
-
-	  	input {
+	  	.city {
 	  		border-top: none;
 	  		border-left: none;
 	  		border-right: none;
-	  		width: 100%;
+	  		width: 70%;
 	  		height: 60px;
 	  		padding: 15px;
 	  	}
+	  	.state {
+	  		border-top: none;
+	  		border-left: none;
+	  		border-right: none;
+	  		width: 20%;
+	  		height: 60px;
+	  		padding: 15px 0 15px 15px;	  		
+	  	}
+	  	h3 {
+	  		padding: 15px 0 2px 15px;
+	  	}
+
 
 	  	.title{
 			/*background-image: url(http://www.uidownload.com/files/396/851/695/blue-background-shading-vector.jpg);*/

@@ -146,12 +146,16 @@
 
 		
 		@media only screen and (min-width: 410px) {
-			/*body {
-				background: red
-			}*/
+	    	 body {
+	    	 	padding: 0px;
+	    	 	margin-top: 15%;
+	    		
+	        	
+	    	}
 
-	    	div {
-	    		background: red
-	        	height: 800px;
+	    	.mainContainer {
+	    		height: 1000px;
+	    		width: 600px;
 	    	}
 		}
+

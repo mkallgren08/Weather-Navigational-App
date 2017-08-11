@@ -4,7 +4,32 @@
 var startLocation = "";
 var finishLocation = "";
 
+// Initialize Firebase
+var config = {
+	apiKey: "AIzaSyDRNdOncBA9vmpziKZVaw2PDTPdEThxfck",
+    authDomain: "navigation-weath-1502375148453.firebaseapp.com",
+    databaseURL: "https://navigation-weath-1502375148453.firebaseio.com",
+    projectId: "navigation-weath-1502375148453",
+    storageBucket: "navigation-weath-1502375148453.appspot.com",
+    messagingSenderId: "775877352628"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
 //-----------------Functions-----------------------
+
+
+
+//Start City, Start State, End City, End State
+function fireBaseLog() {
+	database.ref().push({
+		startCity: startCity,
+		startState: startState,
+		endCity: endCity,
+		endState: endState
+	})
+}
 
 //Function for retrieving ajax data from google directions map api based on user input for start and finish locations
 function googleDirectionApiCall () {
@@ -34,18 +59,19 @@ function googleMapEmbedCall () {
 
 //On click event for startpages launch function which will log the start location and finish location as variables. 
 $("#launch").on("click", function() {
-	startCity = $("#startCity").val().trim()
-	startState = $("#startState").val().trim()
-	console.log("start Location: " + startLocation)
-	endCity = $("#endCity").val().trim()
-	endState = $("#endState").val().trim()
+	startCity = $("#startCity").val().trim();
+	startState = $("#startState").val().trim();
+	endCity = $("#endCity").val().trim();
+	endState = $("#endState").val().trim();
 	
 	//running ajax command for retrieval of google direction maps api after user input variables have been saved.
-	googleDirectionApiCall()
+	googleDirectionApiCall();
 
 
 	//running ajax command for retreival of google maps embed map
-	googleMapEmbedCall()
+	googleMapEmbedCall();
 
+	//running firebase log to push user data to firebase
+	fireBaseLog();
 
 })

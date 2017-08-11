@@ -13,10 +13,10 @@
   
 	  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-
+	  
 	  
 </head>
-<body style="padding: 8% 20%;">
+<body>
 	<div class="container mainContainer">
 		<div class="title">
   		<h1 class="center">Title</h1>
@@ -25,33 +25,14 @@
   		<br>
   		<input id="time" type="text" name="time" placeholder="12:30pm">
   		<br>
-  		<input id="city" type="text" name="city" placeholder="Charlotte, North Carolina">
+  		<input id="startLocation" type="text" name="start" placeholder="Charlotte, North Carolina">
   		<br>
-  		<input id="state" type="text" name="state" placeholder="Washington, D.C.">
+  		<input id="finishLocation" type="text" name="finsh" placeholder="Washington, D.C.">
   		<br>
   		<!-- <a href="mapPage.html"> -->
-  		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->
+  		<button class="btn-primary launchBtn" id="launch">Launch</button>
+  		<!-- </a> -->
 	</div>
-	<iframe width='600' height='600' frameborder= '0' style='border:0' id="mapLocation"></iframe>	
-<!-- 	<script type="text/javascript">
-
-	var database = firebase.database();
-
-		launch() {
-			var date = $("#date").val().trim();
-			var time = $("#time").val().trim();
-			var city = $("#city").val().trim();
-			var state = $("#state").val().trim();
-
-
-			database.ref().push({
-				addedDate: date,
-				addedTime: time,
-				addedCity: city,
-				addedState: state
-			});
-		}
-	</script> -->
-<script src="assets/javascript/javascript.js"></script>
+	<script src="assets/javascript/javascript.js"></script>
 </body>
 </html>

@@ -34,9 +34,9 @@ function googleMapEmbedCall () {
 
 //On click event for startpages launch function which will log the start location and finish location as variables. 
 $("#launch").on("click", function() {
-	startLocation = $("#startLocation").val().trim()
+	startLocation = $("#city").val().trim()
 	console.log("start Location: " + startLocation)
-	finishLocation = $("#finishLocation").val().trim()
+	finishLocation = $("#state").val().trim()
 	
 	//running ajax command for retrieval of google direction maps api after user input variables have been saved.
 	googleDirectionApiCall()

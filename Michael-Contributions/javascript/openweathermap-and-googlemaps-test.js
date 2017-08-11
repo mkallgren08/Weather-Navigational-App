@@ -22,28 +22,33 @@
 //===================================================================================================
 var startLocation = "";
 var finishLocation = "";
+var startLat = "";
+var startLon = "";
+var finishLat = "";
+var finishLon = "";
 
 
-function ajaxTest () {
-  var myGoogleAPIKey = "AIzaSyCVEgY0L4T1AtT6hvhafqj9BWIb_dgb_vI"
-  startLocation = $("#startLocation").val().trim();
-  console.log("start Location: " + startLocation);
-  finishLocation = $("#finishLocation").val().trim();
-  console.log("finish Location: " + finishLocation);
-
-  var queryURL = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startLocation + 
-              "&destination=" + finishLocation + "&key=AIzaSyCVEgY0L4T1AtT6hvhafqj9BWIb_dgb_vI";
-  console.log(queryURL)
+function googleDirectionApiCall () {
+  var queryURLDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startLocation + "&destination=" +
+         finishLocation + "&key=AIzaSyCI-Q45nsEkZDVBrp2I8NB2cTTqK_hhgrg";
   $.ajax({
-    url: queryURL,
-    method: "GET",
-    dataType: 'jsonp',
-    cache: false,
+    url: queryURLDirections,
+    method: "GET"
   }).done(function(response) {
-  console.log(response)
-  });
+      console.log(response);
+      startLat = response.routes[0].legs[0].start_location.lat;
+      console.log("Start Lat: "+ startLat);
+      startLon = response.routes[0].legs[0].start_location.lng;
+      console.log("Start Lon: "+ startLon);
+      finishLat = response.routes[0].legs[0].end_location.lat;
+      console.log("Finish Lat: "+ finishLat);
+      finishLon = response.routes[0].legs[0].end_location.lng;
+      console.log("Finish Lon: "+ finishLon);
+      weatherMapsAPICall(startLat, startLon);
+      weatherMapsAPICall(finishLat, finishLon);
 
-};
+  })
+}
 
 // $("#launch").on("click", function() {
    
@@ -55,7 +60,7 @@ function ajaxTest () {
 
 
   function weatherMapsAPICall(latitude, longitude){
-    var cityName = $("#startLocation").val().trim();
+    //var cityName = $("#startLocation").val().trim();
     // var latitude = $("#startLat").val().trim();
     // var longitude = $("#startLon").val().trim();
     console.log(cityName);
@@ -75,21 +80,50 @@ function ajaxTest () {
           // Create CODE HERE to log the resulting object
           console.log(response);
           // Create CODE HERE to transfer content to HTML
-          $(".city").text("City: " + response.name)
-          $(".wind").text("Windspeed (km/h): "+ response.wind.speed)
-          $(".humidity").text("Humidity: "+ response.main.humidity + "%")
+
+          // make a new block for a city's data-chunk
+          var outputBlock = $("<div>")
+          outputBlock.addClass("outputBlock")
+          outputBlock.attr("style = 'border: 1px solid black'")
+
+          // write the city data
+          var city = $("<p>")
+          city.text("City: " + response.name)
+          outputBlock.append(city)
+
+          //write the wind data
+          var wind = $("<p>");
+          wind.text("Windspeed (km/h): "+ response.wind.speed)
+          outputBlock.append(wind);
+
+          //write the humidity data
+          var humidity = $("<p>")
+          humidity.text("Humidity: "+ response.main.humidity + "%")
+          outputBlock.append(humidity);
+
+          // Write the temp data
           var degreeK = response.main.temp
           var degreeC = (response.main.temp)- 273
           var degreeF = ((response.main.temp)-273)*1.8 + 32
-          $(".tempK").text("Temperature: " + degreeK + "K")
-          $(".tempC").text("Temperature: " + degreeC + "C")
-          $(".tempF").text("Temperature: " + degreeF + "F")
+
+          var temperature = $("<div>")
+          temperature.append("<p>" + "Temperature: " + degreeK + "K" + "</p>");
+          temperature.append("<p>" + "Temperature: " + degreeC + "C" + "</p>");
+          temperature.append("<p>" + "Temperature: " + degreeF + "F" + "</p>");
+          outputBlock.append(temperature);
+
+          $("#dataOutput").append(outputBlock);
     }
 
     $("#submit").on("click", function(){
+        startLocation = $("#startLocation").val().trim();
+        console.log("start Location: " + startLocation);
+        finishLocation = $("#finishLocation").val().trim();
+        console.log("finish Location: " + finishLocation);
       if ($("#startLocation").val().length > 0 || $("#startLat").val() > 0){
             //weatherMapsAPICall();
-            ajaxTest();
+            googleDirectionApiCall();
+
       }
     });
    

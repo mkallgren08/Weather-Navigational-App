@@ -17,6 +17,10 @@
     var latitude = "";
 
     var longitude = "";
+
+    var stepDistances = []
+
+    var stepLength = ""
 //===================================================================================================
                     //                  GOOGLE MAPS                         //
 //===================================================================================================
@@ -27,6 +31,9 @@ var startLon = "";
 var finishLat = "";
 var finishLon = "";
 
+function getSum(total, num) {
+    return total + num;
+}
 
 function googleDirectionApiCall () {
   var queryURLDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startLocation + "&destination=" +
@@ -50,10 +57,26 @@ function googleDirectionApiCall () {
       console.log(tripSteps);
       for ( var i = 0; i < tripSteps.length; i++){
           if (response.routes[0].legs[0].steps[i].distance.value >= 8000 /*~5 miles*/){
+            //clears the distance array of value:
+            stepDistances = []
+            // Pulls the step-endpoint's latitude and longitude
             var stepLat = response.routes[0].legs[0].steps[i].end_location.lat
             var stepLon = response.routes[0].legs[0].steps[i].end_location.lng
             weatherMapsAPICall(stepLat, stepLon)
-            console.log("leg distance: " + response.routes[0].legs[0].steps[i].distance.value)
+            console.log("step distance: " + response.routes[0].legs[0].steps[i].distance.value)
+            // This creates an array to calculate the cumulative distance up to this point
+                for (var k = i; k > -1; k--){
+                  stepLengthkm = response.routes[0].legs[0].steps[k].distance.value
+                  var stepLengthmiles = Math.round(stepLengthkm/1609.344)
+                  stepDistances.push(stepLengthmiles)
+                }
+            console.log("Array of step distances: " + stepDistances)
+            //Note: returns meters
+            //cumulativeDistance = stepDistances.reduce(getSum, 0)
+            //This returns miles
+            cumulativeDistance = stepDistances.reduce(getSum, 0)
+            //cumulativeDistance = (parseInt(cumulativeDistance)/1609.344)
+            console.log("Cumulative distance at this step: " + cumulativeDistance)
           }
 
       }

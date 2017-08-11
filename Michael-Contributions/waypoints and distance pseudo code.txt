@@ -1,0 +1,37 @@
+for ( var i = 0; i < steps.length, i++){
+	if (steps[i].distance.value >= 8000 //~5 miles){
+		var stepLat = steps[i].end_location.lat
+		var stepLon = steps[i].end_location.lng
+		weatherMapsAPICall(stepLat, stepLon)
+		for (var k = i; k > 0; k--){
+			stepLength = response.routes[0].legs[0].steps[k].distance.value
+			stepDistances.push(stepLength)
+		}
+		console.log("Array of step distances: " + stepDistances)
+		
+	}
+
+var stepDistances = []
+var stepLength = ""
+
+for (var j=0; j < tripSteps.length; j++){
+	varlength = response.routes[0].legs[0].steps[i].distance.value
+	stepDistance.push(length);
+	console.log(stepDistance);
+	}
+
+Contained within the if statement above:
+	for (var k = i; k > 0; k--){
+	var stepLength = response.routes[0].legs[0].steps[i].distance.value
+	stepDistance.push(stepLength)
+	}
+
+
+Ex:
+var numbers = [15.5, 2.3, 1.1, 4.7];
+
+function getSum(total, num) {
+    return total + Math.(num);
+}
+
+legDistance = numbers.reduce(getSum, 0);

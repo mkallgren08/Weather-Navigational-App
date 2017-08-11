@@ -46,13 +46,20 @@ function googleDirectionApiCall () {
       console.log("Finish Lon: "+ finishLon);
       weatherMapsAPICall(startLat, startLon);
       weatherMapsAPICall(finishLat, finishLon);
+      var tripSteps = Object.keys(response.routes[0].legs[0].steps)
+      console.log(tripSteps);
+      for ( var i = 0; i < tripSteps.length; i++){
+          if (response.routes[0].legs[0].steps[i].distance.value >= 8000 /*~5 miles*/){
+            var stepLat = response.routes[0].legs[0].steps[i].end_location.lat
+            var stepLon = response.routes[0].legs[0].steps[i].end_location.lng
+            weatherMapsAPICall(stepLat, stepLon)
+            console.log("leg distance: " + response.routes[0].legs[0].steps[i].distance.value)
+          }
 
-  })
+      }
+  });
 }
 
-// $("#launch").on("click", function() {
-   
-// })
 
 //===================================================================================================
                     //                  OPENWEATHERMAPS                        //
@@ -85,6 +92,10 @@ function googleDirectionApiCall () {
           var outputBlock = $("<div>")
           outputBlock.addClass("outputBlock")
           outputBlock.attr("style = 'border: 1px solid black'")
+
+          var blockDivider = $("<p>")
+          blockDivider.text("=====================================================")
+          outputBlock.append(blockDivider);
 
           // write the city data
           var city = $("<p>")

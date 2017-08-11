@@ -1,11 +1,14 @@
 	body {
 	  		background-image: url(https://t4.ftcdn.net/jpg/00/68/82/57/240_F_68825774_isOmOjQrm2sHgPeO5j1dmP8tGKBpT6j1.jpg);
-	  		background-size: 100% 100%;
+	  		background-size: 100% 660px;
 	  		background-repeat: no-repeat;
-	  		height: 10%
+	  		height: 10%;
 	  		
 	  		
 	  	}
+
+	  	
+		
 
 		.mainContainer {
 			
@@ -14,7 +17,6 @@
 			background: white;
 			position: relative;
 			/*left: 0%;*/
-
 		}
 
 	  	input {
@@ -122,3 +124,34 @@
 			   position: absolute;
 			}
 			}
+
+	@media only screen and (min-height: 660px) {
+	    body {
+	        background-size: 100% 750px;
+			}
+	        
+		}
+
+		@media only screen and (min-height: 750px) {
+	    body {
+	        background-size: 100% 1000px;
+	    	}
+		}
+
+		@media only screen and (min-height: 1000px) {
+	    body {
+	        background-size: 100% 1800px;
+	    	}
+		}
+
+		
+		@media only screen and (min-width: 410px) {
+			/*body {
+				background: red
+			}*/
+
+	    	.mainContainer {
+	    		background: red
+	        	height: 800px;
+	    	}
+		}

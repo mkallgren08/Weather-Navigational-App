@@ -8,8 +8,8 @@ var finishLocation = "";
 
 //Function for retrieving ajax data from google directions map api based on user input for start and finish locations
 function googleDirectionApiCall () {
-	var queryURLDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startLocation + "&destination=" +
-				 finishLocation + "&key=AIzaSyCI-Q45nsEkZDVBrp2I8NB2cTTqK_hhgrg";
+	var queryURLDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startCity + "," + startState+ "&destination=" +
+				 endCity + "," + endState + "&key=AIzaSyCI-Q45nsEkZDVBrp2I8NB2cTTqK_hhgrg";
 	$.ajax({
 		url: queryURLDirections,
 		method: "GET"
@@ -19,8 +19,8 @@ function googleDirectionApiCall () {
 }
 
 function googleMapEmbedCall () {
-	var queryURLMaps = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyCI-Q45nsEkZDVBrp2I8NB2cTTqK_hhgrg&origin=" + startLocation
-					+ "&destination=" + finishLocation
+	var queryURLMaps = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyCI-Q45nsEkZDVBrp2I8NB2cTTqK_hhgrg&origin=" + startCity + "," + startState
+					+ "&destination=" + endCity + "," + endState
 	$.ajax( {
 		url: queryURLMaps,
 		method: "GET"
@@ -34,9 +34,11 @@ function googleMapEmbedCall () {
 
 //On click event for startpages launch function which will log the start location and finish location as variables. 
 $("#launch").on("click", function() {
-	startLocation = $("#city").val().trim()
+	startCity = $("#startCity").val().trim()
+	startState = $("#startState").val().trim()
 	console.log("start Location: " + startLocation)
-	finishLocation = $("#state").val().trim()
+	endCity = $("#endCity").val().trim()
+	endState = $("#endState").val().trim()
 	
 	//running ajax command for retrieval of google direction maps api after user input variables have been saved.
 	googleDirectionApiCall()

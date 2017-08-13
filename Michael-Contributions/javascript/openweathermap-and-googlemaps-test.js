@@ -30,6 +30,7 @@ var startLat = "";
 var startLon = "";
 var finishLat = "";
 var finishLon = "";
+var i = "";
 
 function getSum(total, num) {
     return total + num;
@@ -55,24 +56,22 @@ function googleDirectionApiCall () {
       weatherMapsAPICall(finishLat, finishLon);
       var tripSteps = Object.keys(response.routes[0].legs[0].steps)
       console.log(tripSteps);
-      for ( var i = 0; i < tripSteps.length; i++){
+      for ( var i = 0; i < tripSteps.length-1; i++){
           if (response.routes[0].legs[0].steps[i].distance.value >= 8000 /*~5 miles*/){
             //clears the distance array of value:
             stepDistances = []
             // Pulls the step-endpoint's latitude and longitude
-            var stepLat = response.routes[0].legs[0].steps[i].end_location.lat
-            var stepLon = response.routes[0].legs[0].steps[i].end_location.lng
-            weatherMapsAPICall(stepLat, stepLon)
+            var stepLat = response.routes[0].legs[0].steps[i].end_location.lat;
+            var stepLon = response.routes[0].legs[0].steps[i].end_location.lng;
             console.log("step distance: " + response.routes[0].legs[0].steps[i].distance.value)
+            weatherMapsAPICall(stepLat, stepLon)
             // This creates an array to calculate the cumulative distance up to this point
                 for (var k = i; k > -1; k--){
                   stepLengthkm = response.routes[0].legs[0].steps[k].distance.value
                   var stepLengthmiles = Math.round(stepLengthkm/1609.344)
-                  stepDistances.push(stepLengthmiles)
+                  stepDistances.push(stepLengthmiles) 
                 }
             console.log("Array of step distances: " + stepDistances)
-            //Note: returns meters
-            //cumulativeDistance = stepDistances.reduce(getSum, 0)
             //This returns miles
             cumulativeDistance = stepDistances.reduce(getSum, 0)
             //cumulativeDistance = (parseInt(cumulativeDistance)/1609.344)
@@ -83,13 +82,12 @@ function googleDirectionApiCall () {
   });
 }
 
-
 //===================================================================================================
                     //                  OPENWEATHERMAPS                        //
 //===================================================================================================
 
 
-  function weatherMapsAPICall(latitude, longitude){
+  function weatherMapsAPICall(latitude, longitude/*, distance*/){
     //var cityName = $("#startLocation").val().trim();
     // var latitude = $("#startLat").val().trim();
     // var longitude = $("#startLon").val().trim();
@@ -100,11 +98,16 @@ function googleDirectionApiCall () {
         url: queryURL,
         method: "GET"
       }).done(function(response) {
-        weatherMapsAPIResults(response);
+        weatherMapsAPIResults(response/*, distance*/);
       });
-};
+  };
 
-    function weatherMapsAPIResults(response){
+  // function getWeatherIcon(response){
+  // 	var weatherIconCode
+  // 	return weather
+  // };
+
+  function weatherMapsAPIResults(response/*, /distance*/){
           cityName = "";
           console.log("City name (should be null): " + cityName)
           // Create CODE HERE to log the resulting object
@@ -125,7 +128,21 @@ function googleDirectionApiCall () {
           city.text("City: " + response.name)
           outputBlock.append(city)
 
-          //write the wind data
+          // Write the distance from last step
+          // var cumulativeDist = $("<p>")
+          // cumulativeDist.text("Distance from start: " + distance)
+          // outputBlock.append(cumulativeDist)       
+
+
+          // Pull the icon from Open Weather API
+          var weatherIcon = $("<img>")
+          //var iconID = getWeatherIcon
+          //var iconURL = "http://openweathermap.org/img/w/"+ iconID +".png"
+          var iconURL = "http://openweathermap.org/img/w/10d.png"
+          weatherIcon.attr("src", iconURL)
+          outputBlock.append(weatherIcon)
+
+          // write the wind data
           var wind = $("<p>");
           wind.text("Windspeed (km/h): "+ response.wind.speed)
           outputBlock.append(wind);
@@ -136,13 +153,13 @@ function googleDirectionApiCall () {
           outputBlock.append(humidity);
 
           // Write the temp data
-          var degreeK = response.main.temp
-          var degreeC = (response.main.temp)- 273
-          var degreeF = ((response.main.temp)-273)*1.8 + 32
+          // var degreeK = response.main.temp
+          // var degreeC = (response.main.temp)- 273
+          var degreeF = Math.round(((response.main.temp)-273)*1.8 + 32);
 
           var temperature = $("<div>")
-          temperature.append("<p>" + "Temperature: " + degreeK + "K" + "</p>");
-          temperature.append("<p>" + "Temperature: " + degreeC + "C" + "</p>");
+          // temperature.append("<p>" + "Temperature: " + degreeK + "K" + "</p>");
+          // temperature.append("<p>" + "Temperature: " + degreeC + "C" + "</p>");
           temperature.append("<p>" + "Temperature: " + degreeF + "F" + "</p>");
           outputBlock.append(temperature);
 

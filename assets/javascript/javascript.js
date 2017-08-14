@@ -292,10 +292,18 @@ function pickAvatar(output, response){
           outputBlock.append(weather);
           // write the temperature
           var degreeF = Math.round(((response.main.temp)-273)*1.8 + 32);
-          var temp =  $("<td>");
-          
+          var temp =  "<td>" + degreeF + " &deg; </td>";
+          outputBlock.append(temp);
+          //write the humidity
+          var humidityStat = $("<td>");
+          humidityStat.text(response.main.humidity + "%");
+          outputBlock.append(humidityStat)
+          // write the wind data
+          var wind = $("<td>");
+          wind.text(Math.round((response.wind.speed)*0.62) + "mph")
+          outputBlock.append(wind);
 
-
+          $("#tripWeather").append(outputBlock);
           // Write the distance from last step
           // var cumulativeDist = $("<p>")
           // cumulativeDist.text("Distance from start: " + distance)
@@ -308,28 +316,7 @@ function pickAvatar(output, response){
           // weatherIcon.attr("src", iconURL)
           // outputBlock.append(weatherIcon)
 
-          // write the wind data
-          var wind = $("<p>");
-          wind.text("Windspeed (km/h): "+ response.wind.speed)
-          outputBlock.append(wind);
 
-          //write the humidity data
-          var humidity = $("<p>")
-          humidity.text("Humidity: "+ response.main.humidity + "%")
-          outputBlock.append(humidity);
-
-          // Write the temp data
-          // var degreeK = response.main.temp
-          // var degreeC = (response.main.temp)- 273
-          var degreeF = Math.round(((response.main.temp)-273)*1.8 + 32);
-
-          var temperature = $("<div>")
-          // temperature.append("<p>" + "Temperature: " + degreeK + "K" + "</p>");
-          // temperature.append("<p>" + "Temperature: " + degreeC + "C" + "</p>");
-          temperature.append("<p>" + "Temperature: " + degreeF + "F" + "</p>");
-          outputBlock.append(temperature);
-
-          $("#mainTable").append(outputBlock);
     }
 
 // <<<<<<< HEAD

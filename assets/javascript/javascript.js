@@ -42,6 +42,9 @@ function fireBaseLog() {
 		endState: endState
 	})
 }
+database.ref().on("child_added", function(childSnapshot) {
+	$("#mainTable").append("<tr><td><img width='25px' height='25px' src='assets/images/Avatars/Sunny-Day-Avatars/test.jpg'</td><td>" + childSnapshot.val().startCity + "</td></tr>")
+})
 
 function getSum(total, num) {
     return total + num;
@@ -213,11 +216,11 @@ function initMap() {
           $("#dataOutput").append(outputBlock);
     }
 
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 
 
->>>>>>> c99f52d21a5bc1acf63231bc20fffae52216dfdf
+// >>>>>>> c99f52d21a5bc1acf63231bc20fffae52216dfdf
 //On click event for startpages launch function which will log the start location and finish location as variables. 
 $("#launch").on("click", function() {
 	startCity = $("#startCity").val().trim();

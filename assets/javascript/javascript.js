@@ -1,6 +1,6 @@
 //-----------------Variables------------------------
 
-var map = "";
+var map;
 var markerArray = [];
 
 //weatherID =response.weather[0].id 
@@ -194,8 +194,8 @@ function markerMap(coordinates) {
 function initMap() {
 
     // var position2 = {lat: 39.0, lng: -82.58304879999999};
-    var map = new google.maps.Map(document.getElementById('secondaryMap'), {
-    center: {lat: -34.397, lng: 150.644},
+    map = new google.maps.Map(document.getElementById('secondaryMap'), {
+    center: {lat: 34.397, lng: -85.644},
     zoom: 8
         });
     for (var l = 0; l < markerArray.length; l++) {
@@ -278,10 +278,10 @@ function pickAvatar(output, response){
   function weatherMapsAPIResults(response/*, /distance*/){
           cityName = "";
           // make a new block for a city's data-chunk
-          var outputBlock = $("<tr>")
+          var outputBlock = $("<tr>");
           // Pull the icon from Open Weather API
-          var avatarCell = $("<td>")
-          outputBlock.append(pickAvatar(avatarCell, response);)
+          var avatarCell = $("<td>");
+          outputBlock.append(pickAvatar(avatarCell, response));
           // write the city data
           var city = $("<td>");
           city.text(response.name);
@@ -329,7 +329,7 @@ function pickAvatar(output, response){
           temperature.append("<p>" + "Temperature: " + degreeF + "F" + "</p>");
           outputBlock.append(temperature);
 
-          $("#mainTable").append(outputBlock);
+          $("#tripWeather").append(outputBlock);
     }
 
 // <<<<<<< HEAD

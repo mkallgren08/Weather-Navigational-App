@@ -237,8 +237,9 @@ function displayAvatar(shorthand, output){
 	var avatarSrc = "./assets/images/Avatars/" + shorthand + ".jpg"
 	console.log("Src = " + avatarSrc)
 	avatar.attr("src", avatarSrc)
+  avatar.attr("alt", "Avatar cannot be displayed")
 	output.append(avatar)
-  outputBlock.append(output)
+  return output
 }
 
 function pickAvatar(output, response){
@@ -281,8 +282,8 @@ function pickAvatar(output, response){
           var outputBlock = $("<tr>")
           // Pull the icon from Open Weather API
           var avatarCell = $("<td>")
-          pickAvatar(avatarCell, response)
-          //outputBlock.append()
+          var avatar = pickAvatar(avatarCell, response)
+          outputBlock.append(avatar)
           // write the city data
           var city = $("<td>");
           city.text(response.name);

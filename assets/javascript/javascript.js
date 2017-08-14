@@ -183,8 +183,8 @@ function initMap() {
 
           // Pull the icon from Open Weather API
           var weatherIcon = $("<img>")
-          //var iconID = getWeatherIcon
-          //var iconURL = "http://openweathermap.org/img/w/"+ iconID +".png"
+          iconID = response.weather[0].icon
+          iconURL = "https://openweathermap.org/img/w/"+ iconID +".png"
           var iconURL = "https://openweathermap.org/img/w/10d.png"
           weatherIcon.attr("src", iconURL)
           outputBlock.append(weatherIcon)

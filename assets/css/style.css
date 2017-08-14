@@ -204,7 +204,12 @@
 	    	font-size: 60px;
 	    	background: blue;
 		}
-
+		td {
+			color:black;
+		}
+		th {
+			color:black;
+		}
 		#consoleLog {
 			font-size: 20px;
 		}

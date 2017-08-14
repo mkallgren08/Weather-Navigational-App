@@ -213,6 +213,11 @@ function initMap() {
           $("#dataOutput").append(outputBlock);
     }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c99f52d21a5bc1acf63231bc20fffae52216dfdf
 //On click event for startpages launch function which will log the start location and finish location as variables. 
 $("#launch").on("click", function() {
 	startCity = $("#startCity").val().trim();

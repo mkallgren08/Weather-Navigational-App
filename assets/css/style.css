@@ -5,11 +5,7 @@
 	  		height: 10%;
 	  		
 	  		
-	  	}
-
-	  	
-		
-
+	  	} 	
 		.mainContainer {
 			
 			height: 450px;
@@ -121,6 +117,11 @@
 	  		/*width: 100px;*/
 	  	}
 
+		#secondaryMap {
+			height: 800px;
+			width: 100%;
+		}
+
 	  	.rating {
 	  		color: gold;
 	  		text-align: center;
@@ -133,7 +134,6 @@
 			.rating > span:hover ~ span:before {
 			   content: "\2605";
 			   position: absolute;
-			}
 			}
 
 	@media only screen and (min-height: 660px) {

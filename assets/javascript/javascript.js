@@ -139,10 +139,10 @@ function initMap() {
     // var latitude = $("#startLat").val().trim();
     // var longitude = $("#startLon").val().trim();
     console.log(cityName);
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
+    var queryWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
       "&lat=" + latitude + "&lon=" + longitude;
       $.ajax({
-        url: queryURL,
+        url: queryWeatherURL,
         method: "GET"
       }).done(function(response) {
         weatherMapsAPIResults(response/*, distance*/);
@@ -185,7 +185,7 @@ function initMap() {
           var weatherIcon = $("<img>")
           //var iconID = getWeatherIcon
           //var iconURL = "http://openweathermap.org/img/w/"+ iconID +".png"
-          var iconURL = "http://openweathermap.org/img/w/10d.png"
+          var iconURL = "https://openweathermap.org/img/w/10d.png"
           weatherIcon.attr("src", iconURL)
           outputBlock.append(weatherIcon)
 

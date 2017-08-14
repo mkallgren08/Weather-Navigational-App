@@ -217,7 +217,7 @@ function initMap() {
     //var cityName = $("#startLocation").val().trim();
     // var latitude = $("#startLat").val().trim();
     // var longitude = $("#startLon").val().trim();
-    console.log(cityName);
+    //console.log(cityName);
     var queryWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
       "&lat=" + latitude + "&lon=" + longitude;
       $.ajax({

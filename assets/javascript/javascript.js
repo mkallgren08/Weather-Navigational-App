@@ -234,11 +234,11 @@ function initMap() {
   // };
 function displayAvatar(shorthand, output){
 	var avatar = $("<img>")
-	var avatarSrc = "./assets/javascript/Avatars/" + shorthand + ".jpg"
+	var avatarSrc = "./assets/images/Avatars/" + shorthand + ".jpg"
 	console.log("Src = " + avatarSrc)
 	avatar.attr("src", avatarSrc)
 	output.append(avatar)
-  return output
+  outputBlock.append(output)
 }
 
 function pickAvatar(output, response){
@@ -281,7 +281,8 @@ function pickAvatar(output, response){
           var outputBlock = $("<tr>")
           // Pull the icon from Open Weather API
           var avatarCell = $("<td>")
-          outputBlock.append(pickAvatar(avatarCell, response);)
+          pickAvatar(avatarCell, response)
+          //outputBlock.append()
           // write the city data
           var city = $("<td>");
           city.text(response.name);

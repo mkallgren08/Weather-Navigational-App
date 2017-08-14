@@ -45,7 +45,7 @@
 	</nav>
 	<div class="container mainContainer">
 		<div class="title">
-  			<h1 class="center">Title</h1>
+  			<h1 class="center">Where To?</h1>
 		</div>
 		<h3>Start Location</h3>
   		<input class="city" type="text" name="city" placeholder="Charlotte">
@@ -157,22 +157,22 @@
 		<p class="center"><img id="rateImg" src="http://dropzite-images.s3.amazonaws.com/img/49736/de1c5bb/original/2222.png"></p>
 
 		<div class="rating">
-		<span id="oneStar">☆</span>
-		<span id="twoStar">☆</span>
-		<span id="threeStar">☆</span>
-		<span id="fourStar">☆</span>
 		<span id="fiveStar">☆</span>
+		<span id="fourStar">☆</span>
+		<span id="threeStar">☆</span>
+		<span id="twoStar">☆</span>
+		<span id="oneStar">☆</span>
 		</div>
 
 		
 			<!-- <div class="row">
 				<div class="col-sm-12"> -->
-					<a href="startPage.html"><button class="btn-primary newLaunch" onclick="launch()">New Location</button></a>
+					<a><button class="btn-primary newLaunch" onclick="launch()">New Location</button></a>
 	<!-- 			</div>
 			</div>
 			<div class="row"> -->
 			<!-- 	<div class="col-sm-12"> -->
-					<a href="_blank"><button class="btn-danger quit" onclick="quit()">Exit</button></a>
+					<a><button class="btn-danger quit" onclick="quit()">Exit</button></a>
 	<!-- 			</div>
 			</div> -->
 	</div>
@@ -215,19 +215,39 @@
 
 	$("#quitScreen").hide();
 	$(".mainContainerDone").hide();
-		function quitScreenAction() {
-			$(".mapImg").hide();
-			$(".consoleData").hide();
-			$(".console").hide();
-			$("#quitScreen").show();
-			$(".nav-top").show();
-			$(".mainContainerDone").show();
-		}
+	function quitScreenAction() {
+		$(".mapImg").hide();
+		$(".consoleData").hide();
+		$(".console").hide();
+		$("#quitScreen").show();
+		$(".nav-top").show();
+		$(".mainContainerDone").show();
+	}
 
 	function launch() {
 		$(".mainContainerDone").hide();
 		$(".mainContainer").show();
 	}
+
+	$("#oneStar").on("click", function() {
+		console.log("1 star rating");
+	});
+
+	$("#twoStar").on("click", function() {
+		console.log("2 star rating");
+	});
+
+	$("#threeStar").on("click", function() {
+		console.log("3 star rating");
+	});
+
+	$("#fourStar").on("click", function() {
+		console.log("4 star rating");
+	});
+
+	$("#fiveStar").on("click", function() {
+		console.log("5 star rating");
+	});
 
 	// function review() {
 	// 	$(".mainContainer").hide();

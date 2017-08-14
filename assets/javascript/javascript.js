@@ -238,6 +238,7 @@ function displayAvatar(shorthand, output){
 	console.log("Src = " + avatarSrc)
 	avatar.attr("src", avatarSrc)
 	output.append(avatar)
+  return output
 }
 
 function pickAvatar(output, response){
@@ -276,28 +277,29 @@ function pickAvatar(output, response){
 
   function weatherMapsAPIResults(response/*, /distance*/){
           cityName = "";
-          console.log("City name (should be null): " + cityName)
-          // Create CODE HERE to log the resulting object
-          console.log(response);
-          // Create CODE HERE to transfer content to HTML
-
           // make a new block for a city's data-chunk
           var outputBlock = $("<tr>")
-
+          // Pull the icon from Open Weather API
+          var avatarCell = $("<td>")
+          outputBlock.append(pickAvatar(avatarCell, response);)
           // write the city data
-          var city = $("<td>")
-          city.text(response.name)
-          outputBlock.append(city)
+          var city = $("<td>");
+          city.text(response.name);
+          outputBlock.append(city);
+          //write the weather data
+          var weather =  $("<td>");
+          weather.text(response.weather[0].description);
+          outputBlock.append(weather);
+          // write the temperature
+          var degreeF = Math.round(((response.main.temp)-273)*1.8 + 32);
+          var temp =  $("<td>");
+          
+
 
           // Write the distance from last step
           // var cumulativeDist = $("<p>")
           // cumulativeDist.text("Distance from start: " + distance)
           // outputBlock.append(cumulativeDist)       
-
-
-          // Pull the icon from Open Weather API
-          var avatarCell = $("<td>")
-          pickAvatar(avatarCell, response);
 
 
           // iconID = response.weather[0].icon

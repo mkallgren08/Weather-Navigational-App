@@ -213,10 +213,7 @@ function initMap() {
           $("#dataOutput").append(outputBlock);
     }
 
-	function launch() {
-		$(".mainContainerDone").hide();
-		$(".mainContainer").show();
-	}
+
 
 //On click event for startpages launch function which will log the start location and finish location as variables. 
 $("#launch").on("click", function() {
@@ -229,7 +226,7 @@ $("#launch").on("click", function() {
 	//running ajax command for retrieval of google direction maps api after user input variables have been saved.
 	googleDirectionApiCall();
 
-	launch();
+
 
 	//running ajax command for retreival of google maps embed map
 	googleMapEmbedCall();

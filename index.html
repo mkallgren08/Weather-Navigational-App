@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<title>Sign In</title>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,10 +17,115 @@
 
 	  
 </head>
-<body style="padding: 8% 20%;">
+<body>
+	<nav class="navbar navbar-inverse nav-top">
+	  <h2 class="navBrandStyle navBtn">
+	  	Brand
+	  </h2>
+
+	  <button onclick="contact()" class="navStyle navBtn">
+	  	Contact
+	  </button>
+
+	  <button onclick="review()" class="navStyle navBtn">
+	  	Reviews
+	  </button>
+	  <div class="dropdown navStyle">
+		  <button class="btn btn-default dropdown-toggle dropDown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		    Theme
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu navStyle" aria-labelledby="dropdownMenu1">
+		    <li><button onclick="firstTheme()" class="dropBtn">Cloud</button></li>
+		    <li><button onclick="secondTheme()" class="dropBtn">Storm</button></li>
+		    <li><button onclick="thirdTheme()" class="dropBtn">Seasons</button></li>
+		  </ul>
+		</div>
+
+	</nav>
 	<div class="container mainContainer">
 		<div class="title">
-  		<h1 class="center">Title</h1>
+  			<h1 class="center">Title</h1>
+		</div>
+		<h3>Start Location</h3>
+  		<input class="city" type="text" name="city" placeholder="Charlotte">
+  		<input class="state" type="text" placeholder="NC">
+  		<br>
+  		<h3>Ending Location</h3>
+  		<input class="city" type="text" name="state" placeholder="Washington">
+  		<input class="state" type="text" placeholder="DC">
+  		<br>
+  		<!-- <a href="mapPage.html"> -->
+  		<button class="btn-primary launchBtn" id="launch" onclick="launchMap()">Launch</button><!-- </a> -->
+	</div>
+
+
+	<div class="container mapContainer">
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="leftMap">
+				<img class="mapImg" src="http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg">
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="rightMap">
+				<img class="mapImg" src="http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg">
+			</div>
+		</div>
+	</div>
+<div class="alert alert-success consoleData center" role="alert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At distinctio earum culpa ut aliquid reiciendis illo non, officiis quidem, soluta laudantium asperiores et! Fugit, id eaque error, accusantium esse maxime? lorem lorem</div>
+	<nav class="navbar navbar-default console">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Icon</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+        <div class="dropup bottomNavStyle">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Console
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <div id="consoleContainer">
+            	<h1 class="center consoleStructure consoleTitle">Console</h1>
+            	<div class="container">
+            		<p id="consoleLog" class="consoleStructure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ab maxime, provident hic itaque, aut nam. Esse quos veritatis atque pariatur, nam reprehenderit, necessitatibus deserunt dignissimos cum iusto doloribus fugiat.</p>
+            		<hr>
+            		<p id="consoleLog" class="consoleStructure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ab maxime, provident hic itaque, aut nam. Esse quos veritatis atque pariatur, nam reprehenderit, necessitatibus deserunt dignissimos cum iusto doloribus fugiat.</p>
+					<hr>
+            		<p id="consoleLog" class="consoleStructure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ab maxime, provident hic itaque, aut nam. Esse quos veritatis atque pariatur, nam reprehenderit, necessitatibus deserunt dignissimos cum iusto doloribus fugiat.</p>
+            	</div>
+            	
+            </div>
+          </ul>
+        </div>
+
+      </ul>
+      
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+
+      </form>
+      <button onclick="quitScreenAction()" type="quit" class="btn btn-danger quitBtn">Quit</button>
+      
+      	<div class="container mainContainer" id="quitScreen">
+		<div class="title">
+  			<h1 class="center">Title</h1>
 		</div>
 		<h3>Start Location</h3>
   		<input class="city" type="text" name="city" placeholder="Charlotte">
@@ -32,10 +138,103 @@
   		<!-- <a href="mapPage.html"> -->
   		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->
 	</div>
+
+	 </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+	<div class="container mainContainerDone">
+		<!-- <dir class="row">
+			<div class="col-sm-12"> -->
+		<div class="quitTitle">
+  			<h1 class="center">Quit</h1>
+		</div>
+		<!-- <hr> -->
+		
+		<!-- <h3 class="center" id="ratePrompt">Please Take a Moment to Rate your experience</h3> -->
+		<p class="center"><img id="rateImg" src="http://dropzite-images.s3.amazonaws.com/img/49736/de1c5bb/original/2222.png"></p>
+
+		<div class="rating">
+		<span id="oneStar">☆</span>
+		<span id="twoStar">☆</span>
+		<span id="threeStar">☆</span>
+		<span id="fourStar">☆</span>
+		<span id="fiveStar">☆</span>
+		</div>
+
+		
+			<!-- <div class="row">
+				<div class="col-sm-12"> -->
+					<a href="startPage.html"><button class="btn-primary newLaunch" onclick="launch()">New Location</button></a>
+	<!-- 			</div>
+			</div>
+			<div class="row"> -->
+			<!-- 	<div class="col-sm-12"> -->
+					<a href="_blank"><button class="btn-danger quit" onclick="quit()">Exit</button></a>
+	<!-- 			</div>
+			</div> -->
+	</div>
+  		
+	</div>
 	
-	<!-- Placeholder for map embed.  Will be injected with src on submit button click -->
-	<iframe width='600' height='600' frameborder= '0' style='border:0' id="mapLocation"></iframe>	
 
 <script src="assets/javascript/javascript.js"></script>
+<script type="text/javascript">
+		$(".mapImg").hide();
+		$(".consoleData").hide();
+		$(".console").hide();
+
+	// $("#reviewPage").hide();
+	function firstTheme() {
+		$("body").css("background-image", "url(https://t4.ftcdn.net/jpg/00/68/82/57/240_F_68825774_isOmOjQrm2sHgPeO5j1dmP8tGKBpT6j1.jpg)");
+		$(".title, .quit").css("background", "linear-gradient(to right, white, #99ebff, white)");
+		$(".launchBtn, .newLaunch, .quit").css("background", "#2e71df");
+	}
+
+	function secondTheme() {
+		$("body").css("background-image", "url(http://onpape.com/data/onpape.com-85660201.jpg)");
+		$(".title, .quit").css("background", "linear-gradient(to right, white, gray, white)");
+		$(".launchBtn, .newLaunch, .quit").css("background-image", "url(http://www.peacepond.com/Lightning.jpg)");
+	}
+
+	function thirdTheme() {
+		$("body").css("background-image", "url(http://wallpapercave.com/wp/qQa5Pd7.jpg)");
+		$(".title, .quit").css("background", "linear-gradient(to right, white, yellow, white)");
+		$(".launchBtn, .newLaunch, .quit").css("background-image", "url(https://fs.bitcoinmagazine.com/img/images/atomic-swaps-how-the-lightning-network-exten.max-800x800.jpg)");
+	}
+
+	function launchMap() {
+		$(".mainContainer").hide();
+		$(".nav-top").hide();
+		$(".mapImg").show();
+		$(".consoleData").show();
+		$(".console").show();
+	}
+
+	$("#quitScreen").hide();
+	$(".mainContainerDone").hide();
+		function quitScreenAction() {
+			$(".mapImg").hide();
+			$(".consoleData").hide();
+			$(".console").hide();
+			$("#quitScreen").show();
+			$(".nav-top").show();
+			$(".mainContainerDone").show();
+		}
+
+	function launch() {
+		$(".mainContainerDone").hide();
+		$(".mainContainer").show();
+	}
+
+	// function review() {
+	// 	$(".mainContainer").hide();
+	// 	$("#reviews").append("Data for reviews");
+	// 	$("#reviewPage").show();
+
+	// }
+</script>
 </body>
 </html>

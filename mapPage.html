@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Map</title>
-<<<<<<< HEAD
+
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	  <!-- Latest compiled and minified CSS -->
@@ -17,39 +17,101 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
 </head>
 <body>
+
 	<div class="container mapContainer">
-	<div class="row map">
-		<div class="col-sm-10">
-			<h1>Test</h1>
-		</div>
-	</div>
-	<div class="row console">
-		<div class="col-sm-2">
-			<a href="donePage.html"><button class="btnPrimary" id="done" onclick="done()">Done</button></a>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="leftMap">
+				<img class="mapImg" src="http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg">
+			</div>
 		</div>
 
-		<div class="col-sm-2">
-			<h3 class="center">Icon</h3>
-		</div>
-		<div class="col-sm-8">
-			<h3 class="center">Data</h3>
+		<div class="col-sm-6">
+			<div class="rightMap">
+				<img class="mapImg" src="http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg">
+			</div>
 		</div>
 	</div>
+<div class="alert alert-success consoleData" role="alert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At distinctio earum culpa ut aliquid reiciendis illo non, officiis quidem, soluta laudantium asperiores et! Fugit, id eaque error, accusantium esse maxime? lorem</div>
+	<nav class="navbar navbar-default console">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Icon</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+        <div class="dropup bottomNavStyle">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Console
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <div id="consoleContainer">
+            	<h1 class="center consoleStructure consoleTitle">Console</h1>
+            	<div class="container">
+            		<p id="consoleLog" class="consoleStructure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ab maxime, provident hic itaque, aut nam. Esse quos veritatis atque pariatur, nam reprehenderit, necessitatibus deserunt dignissimos cum iusto doloribus fugiat.</p>
+            	</div>
+            	
+            </div>
+          </ul>
+        </div>
+
+      </ul>
+      
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+
+      </form>
+      <button onclick="quitScreenAction()" type="quit" class="btn btn-danger quitBtn">Quit</button>
+      
+      	<div class="container mainContainer" id="quitScreen">
+		<div class="title">
+  			<h1 class="center">Title</h1>
+		</div>
+		<h3>Start Location</h3>
+  		<input class="city" type="text" name="city" placeholder="Charlotte">
+  		<input class="state" type="text" placeholder="NC">
+  		<br>
+  		<h3>Ending Location</h3>
+  		<input class="city" type="text" name="state" placeholder="Washington">
+  		<input class="state" type="text" placeholder="DC">
+  		<br>
+  		<!-- <a href="mapPage.html"> -->
+  		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->
 	</div>
+
+	 </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+	
+	<script type="text/javascript">
+		$("#quitScreen").hide();
+		function quitScreenAction() {
+			$(".mapImg").hide();
+			$(".consoleData").hide();
+			$(".console").hide();
+			$("#quitScreen").show();
+		}
+	</script>
 	</body>
-=======
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
-		<!-- Latest compiled and minified JavaScript -->
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</head>
-<body>
 
-	<h1>Hello</h1>
-	<div class="container">
-		<div class="col-lg-12">
+	
 
-		</div>
-	</div>
-</body>
->>>>>>> e981766be10347ae1f53425bd20087f5a9ef69de
 </html>

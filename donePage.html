@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	  <!-- Latest compiled and minified CSS -->
@@ -20,14 +21,43 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
 </head>
-	<body style="padding: 8% 20%;">
-	<div class="container mainContainer">
-		<div class="title">
-  		<h1 class="center">Quit</h1>
+	<body>
+	<nav class="navbar navbar-inverse nav-top">
+	  <h2 class="navBrandStyle navBtn">
+	  	Brand
+	  </h2>
+
+	  <button onclick="contact()" class="navStyle navBtn">
+	  	Contact
+	  </button>
+
+	  <button onclick="review()" class="navStyle navBtn">
+	  	Reviews
+	  </button>
+	  <div class="dropdown navStyle">
+		  <button class="btn btn-default dropdown-toggle dropDown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		    Theme
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu navStyle" aria-labelledby="dropdownMenu1">
+		    <li><button onclick="firstTheme()" class="dropBtn">Cloud</button></li>
+		    <li><button onclick="secondTheme()" class="dropBtn">Storm</button></li>
+		    <li><button onclick="thirdTheme()" class="dropBtn">Seasons</button></li>
+		  </ul>
 		</div>
-		<hr>
+
+	</nav>
+	<div class="container mainContainer">
+		<!-- <dir class="row">
+			<div class="col-sm-12"> -->
+		<div class="quitTitle">
+  			<h1 class="center">Quit</h1>
+		</div>
+		<!-- <hr> -->
+		
 		<!-- <h3 class="center" id="ratePrompt">Please Take a Moment to Rate your experience</h3> -->
 		<p class="center"><img id="rateImg" src="http://dropzite-images.s3.amazonaws.com/img/49736/de1c5bb/original/2222.png"></p>
+
 		<div class="rating">
 		<span id="oneStar">☆</span>
 		<span id="twoStar">☆</span>
@@ -36,11 +66,16 @@
 		<span id="fiveStar">☆</span>
 		</div>
 
-
 		
-  		<a href="startPage.html"><button class="btn-primary newLaunch" onclick="launch()">New Location</button></a>
-  		<br>
-  		<a href="_blank"><button class="btn-danger quit" onclick="quit()">Exit</button></a>
+		<div class="row">
+			<div class="col-sm-5">
+				<a href="startPage.html"><button class="btn-primary newLaunch" onclick="launch()">New Location</button></a>
+			</div>
+			<div class="col-sm-5">
+				<a href="_blank"><button class="btn-danger quit" onclick="quit()">Exit</button></a>
+			</div>
+		</div>
+  		
 	</div>
 	
 </body>

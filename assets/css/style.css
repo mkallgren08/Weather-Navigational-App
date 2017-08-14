@@ -18,6 +18,33 @@
 		opacity: 0.7;
 	}
 
+	table {
+
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+	color: black;
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+	font-size: 40px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/*.navStyle {
+	position: relative;  <-- Added 
+    z-index: 1; /* <-- Added 
+}
+*/
 
 
 	.navBrandStyle, .navStyle, .bottomNavStyle {
@@ -36,6 +63,7 @@
 	}
 
 	.dropDown {
+
 		background: transparent;
 		color: white;
 		border: none;
@@ -207,6 +235,11 @@
 
 		#consoleLog {
 			font-size: 20px;
+		}
+
+		.dropDown {
+			height: 80%;
+			width: 100%;
 		}
 
 		.quitBtn {

@@ -5,7 +5,7 @@
 	  		background-repeat: no-repeat;
 	  		height: 10%;
 	  		
-	  		
+
 	  	}
 
 	.nav-top {
@@ -55,7 +55,14 @@
 	  	
 		
 
-		.mainContainer, .mainContainerDone {
+	.mainContainerDone {
+		height: 400px;
+    	width: 450px;
+    	position: relative;
+    	background: white;
+	  	} 	
+		.mainContainer {
+
 			
 			height: 400px;
 			width: 450px;
@@ -219,6 +226,11 @@
 	  		/*width: 100px;*/
 	  	}
 
+		#secondaryMap {
+			height: 800px;
+			width: 100%;
+		}
+
 	  	.rating {
 	  		color: gold;
 	  		text-align: center;
@@ -232,6 +244,7 @@
 			   content: "\2605";
 			   position: absolute;
 			}
+
 			}
 			
 			@media only screen and (min-width: 412px) {

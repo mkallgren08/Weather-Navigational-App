@@ -151,10 +151,12 @@
 	  	}
 
 	  	.rightMap {
-	  		height: 100%;
+	  		height: 0%;
 	  		background: red;
 	  	}
+		#secondaryMap {
 
+		}
 	  	.map {
 	  		background-image: url(https://www.empresaiceberg.cl/images/ubicacionarica.jpg);
 	  		background-size: 100% 100%;
@@ -315,10 +317,10 @@
 		}
 
 		@media only screen and (max-width: 1000px) {
-			body {
-				background: red;
-			}
 			.mapImg {
+				height: 600px;
+			}
+			.mapSize {
 				height: 600px;
 			}
 		}

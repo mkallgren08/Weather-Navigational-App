@@ -14,7 +14,7 @@
   
 	  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-
+	  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>	  
 	  
 </head>
 <body>
@@ -48,29 +48,29 @@
   			<h1 class="center">Where To?</h1>
 		</div>
 		<h3>Start Location</h3>
-  		<input class="city" type="text" name="city" placeholder="Charlotte">
-  		<input class="state" type="text" placeholder="NC">
+  		<input class="city" id="startCity" type="text" name="city" placeholder="Charlotte">
+  		<input class="state" id="startState" type="text" placeholder="NC">
   		<br>
   		<h3>Ending Location</h3>
-  		<input class="city" type="text" name="state" placeholder="Washington">
-  		<input class="state" type="text" placeholder="DC">
+  		<input class="city" id="endCity" type="text" name="state" placeholder="Washington">
+  		<input class="state" id="endState" type="text" placeholder="DC">
   		<br>
   		<!-- <a href="mapPage.html"> -->
-  		<button class="btn-primary launchBtn" id="launch" onclick="launchMap()">Launch</button><!-- </a> -->
+  		<button class="btn-primary launchBtn" id="launch" onclick="launchMap()">Test</button><!-- </a> -->
 	</div>
 
 
 	<div class="container mapContainer">
 	<div class="row">
-		<div class="col-sm-6">
+		<div class="col-sm-6" id="mapSize">
 			<div class="leftMap">
-				<img class="mapImg" src="http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg">
+				<iframe class="mapImg" id="mapLocation"></iframe>
 			</div>
 		</div>
 
-		<div class="col-sm-6">
+		<div class="col-sm-6" id="mapSize">
 			<div class="rightMap">
-				<img class="mapImg" src="http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg">
+				<div class="mapImg" id="secondaryMap">
 			</div>
 		</div>
 	</div>
@@ -128,12 +128,12 @@
   			<h1 class="center">Title</h1>
 		</div>
 		<h3>Start Location</h3>
-  		<input class="city" type="text" name="city" placeholder="Charlotte">
-  		<input class="state" type="text" placeholder="NC">
+  		<input class="city" id="startCity" type="text" name="city" placeholder="Charlotte">
+  		<input class="state" id="startState" type="text" placeholder="NC">
   		<br>
   		<h3>Ending Location</h3>
-  		<input class="city" type="text" name="state" placeholder="Washington">
-  		<input class="state" type="text" placeholder="DC">
+  		<input class="city" id="endCity" type="text" name="state" placeholder="Washington">
+  		<input class="state" id="endState" type="text" placeholder="DC">
   		<br>
   		<!-- <a href="mapPage.html"> -->
   		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->

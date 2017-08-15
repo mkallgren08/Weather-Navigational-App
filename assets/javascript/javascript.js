@@ -70,12 +70,12 @@ var finishLocation = "";
 
 // Initialize Firebase
 var config = {
-	apiKey: "AIzaSyDRNdOncBA9vmpziKZVaw2PDTPdEThxfck",
-    authDomain: "navigation-weath-1502375148453.firebaseapp.com",
-    databaseURL: "https://navigation-weath-1502375148453.firebaseio.com",
-    projectId: "navigation-weath-1502375148453",
-    storageBucket: "navigation-weath-1502375148453.appspot.com",
-    messagingSenderId: "775877352628"
+  apiKey: "AIzaSyAI-jL25Uyj3rF0-402z3aCVMaheImMqQk",
+  authDomain: "navigation-weather-app.firebaseapp.com",
+  databaseURL: "https://navigation-weather-app.firebaseio.com",
+  projectId: "navigation-weather-app",
+  storageBucket: "navigation-weather-app.appspot.com",
+  messagingSenderId: "268634641082"
 };
 firebase.initializeApp(config);
 
@@ -99,13 +99,51 @@ var stepLength = ""
 
 //Start City, Start State, End City, End State
 function fireBaseLog() {
-	database.ref().push({
+	database.ref("Trip Data").push({
 		startCity: startCity,
 		startState: startState,
 		endCity: endCity,
 		endState: endState
-	})
-}
+	});
+};
+
+database.ref("Trip Data").limitToLast(5).on("child_added", function(childSnapshot) {
+    console.log("Child Snapshot: " + childSnapshot.val());
+    console.log("Start City: " + childSnapshot.val().startCity);
+    console.log("End City: " + childSnapshot.val().endCity);
+    console.log("Start State: " + childSnapshot.val().startState);
+    console.log("End State: " + childSnapshot.val().endState);
+    var searchHistory = $("<tr>");
+    var startHistory = $("<td>");
+    startHistory.addClass("startEntry");
+    var endHistory = $("<td>");
+    endHistory.addClass("endEntry")
+    startHistory.append(childSnapshot.val().startCity + ", " + childSnapshot.val().startState);
+    endHistory.append(childSnapshot.val().endCity + ", " + childSnapshot.val().endState);
+    searchHistory.attr("role", "button");
+    searchHistory.attr("class", "navHistoryData")
+    searchHistory.append(startHistory);
+    searchHistory.append(endHistory);
+    $("#navHistoryData").append(searchHistory)
+
+});
+
+$(document).on("click", ".navHistoryData", function(event){
+        event.preventDefault();
+        var startingData = this.$(".startEntry").text();
+        var result = startingData.split(", ");
+        startCity = result[0];
+        startState = result[1];
+        var endingData = this.$(".endEntry").text();
+        var result2 = endingData.split(", ")
+        endCity = result2[0];
+        endState = result2[1];
+        $("#startCity").append(startCity);
+        $("#startState").append(startState);
+        $("#endCity").append(endCity);
+        $("#endState").append(endState);
+
+})
 
 function getSum(total, num) {
     return total + num;

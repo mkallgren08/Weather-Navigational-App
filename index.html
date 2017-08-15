@@ -111,16 +111,20 @@
 	
 			<div class="col-sm-6" id="mapSize">
 				<div class="rightMap">
-					<div style="height: 500px;" class=	"mapImg" id="secondaryMap">
+					<div style="height: 500px;" class="mapImg" id="secondaryMap">
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<div class="alert alert-success consoleData center" role="alert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur illo, magnam ea ratione sed omnis delectus illum blanditiis repellendus obcaecati, ipsa dolores assumenda, iusto cupiditate ad ipsum a quidem, tempore.</div>
+
 <div class="alert alert-success consoleData center" role="alert" id="currentDirections">Starting Location: Test   Ending Location: Test</div>
+
 	<nav class="navbar navbar-default console">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+   
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -128,7 +132,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Icon</a>
+      
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -176,7 +180,7 @@
 
 
 
-      	<div class="container mainContainer" id="quitScreen">
+    <div class="container mainContainer" id="quitScreen">
 		<div class="title">
   			<h1 class="center">Title</h1>
 		</div>
@@ -192,18 +196,6 @@
   		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->
 	</div>
 
-	<div class="container rateContainer">
-		<h3 class="center" id="ratePrompt">Please Take a Moment to Rate your experience</h3> 
-		<p class="center"><img id="rateImg" src="http://dropzite-images.s3.amazonaws.com/img/49736/de1c5bb/original/2222.png"></p>
-
-		<div class="rating">
-		<span id="fiveStar">☆</span>
-		<span id="fourStar">☆</span>
-		<span id="threeStar">☆</span>
-		<span id="twoStar">☆</span>
-		<span id="oneStar">☆</span>
-		</div>
-	</div>
 
 	 </div>
 
@@ -217,25 +209,20 @@
 		<div class="quitTitle">
   			<h1 class="center">Quit</h1>
 		</div>
-		<!-- <hr> -->
 		
-		<!-- <h3 class="center" id="ratePrompt">Please Take a Moment to Rate your experience</h3> -->
-		<!-- <p class="center"><img id="rateImg" src="http://dropzite-images.s3.amazonaws.com/img/49736/de1c5bb/original/2222.png"></p>
-
-		<div class="rating">
-		<span id="fiveStar">☆</span>
-		<span id="fourStar">☆</span>
-		<span id="threeStar">☆</span>
-		<span id="twoStar">☆</span>
-		<span id="oneStar">☆</span>
-		</div> -->
-
-					<a><button class="btn-warning rate" onclick="rate()">Rate</button></a>
+		<div id="arrived" class="center">
+			<h2 class="arrivedText">
+			You Have Arrived
+		</h2>
+		<i class="glyphicon glyphicon-road road-icon center"></i>
+		</div>
+		
+					<a href="rate.html" target="_blank"><button class="btn-warning rate">Rate</button></a>
 	
 					<a><button class="btn-primary newLaunch" onclick="launch()">New Location</button></a>
 
-					<a><button class="btn-danger quit" onclick="quit()">Exit</button></a>
-	 			</div>
+					
+	</div>
 			
 	</div>
   		
@@ -247,7 +234,7 @@
 		$(".mapImg").hide();
 		$(".consoleData").hide();
 		$(".console").hide();
-		$(".rateContainer").hide();
+		
 
 	// $("#reviewPage").hide();
 	function firstTheme() {
@@ -270,6 +257,7 @@
 
 	function launchMap() {
 		$(".mainContainer").hide();
+		$(".rateContainer").hide();
 		$(".nav-top").hide();
 		$(".mapImg").show();
 		$(".consoleData").show();
@@ -287,42 +275,12 @@
 		$(".mainContainerDone").show();
 	}
 
-	function rate() {
-		$(".mainContainerDone").hide();
-		$(".rateContainer").show();
-	}
-
 	function launch() {
 		$(".mainContainerDone").hide();
 		$(".mainContainer").show();
 	}
 
-	$("#oneStar").on("click", function() {
-		console.log("1 star rating");
-	});
 
-	$("#twoStar").on("click", function() {
-		console.log("2 star rating");
-	});
-
-	$("#threeStar").on("click", function() {
-		console.log("3 star rating");
-	});
-
-	$("#fourStar").on("click", function() {
-		console.log("4 star rating");
-	});
-
-	$("#fiveStar").on("click", function() {
-		console.log("5 star rating");
-	});
-
-	// function review() {
-	// 	$(".mainContainer").hide();
-	// 	$("#reviews").append("Data for reviews");
-	// 	$("#reviewPage").show();
-
-	// }
 </script>
 </body>
 </html>

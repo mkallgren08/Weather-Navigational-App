@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rate</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <!-- Latest compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	  <!-- Optional theme -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	  <!-- Latest compiled and minified JavaScript -->
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+	  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+	  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>	
+</head>
+<body>
+	<div class="container rateContainer">
+		<h3 class="center" id="ratePrompt">Please Take a Moment to Rate your experience</h3> 
+		<p class="center"><img id="rateImg" src="http://dropzite-images.s3.amazonaws.com/img/49736/de1c5bb/original/2222.png"></p>
+
+		<div class="rating">
+		<span id="fiveStar">☆</span>
+		<span id="fourStar">☆</span>
+		<span id="threeStar">☆</span>
+		<span id="twoStar">☆</span>
+		<span id="oneStar">☆</span>
+		</div>
+
+		<div id="thankYou" class="center">
+			Thank You For The Support!!!
+		</div>
+	</div>
+	<script type="text/javascript">
+	$("#thankYou").hide();
+	
+
+	$("#oneStar").on("click", function() {
+		rated();
+		console.log("1 star rating");
+	});
+
+	$("#twoStar").on("click", function() {
+		rated();
+		console.log("2 star rating");
+	});
+
+	$("#threeStar").on("click", function() {
+		rated();
+		console.log("3 star rating");
+	});
+
+	$("#fourStar").on("click", function() {
+		rated();
+		console.log("4 star rating");
+	});
+
+	$("#fiveStar").on("click", function() {
+		rated();
+		console.log("5 star rating");
+	});
+
+	function rated() {
+		$(".rating").hide();
+		$("#thankYou").show();
+	}
+	</script>
+</body>
+</html>

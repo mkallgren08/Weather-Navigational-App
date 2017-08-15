@@ -111,6 +111,23 @@ function getSum(total, num) {
     return total + num;
 }
 
+function weatherMapsAPICallTwo(latitude, longitude/*, distance*/){
+var queryWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
+  "&lat=" + latitude + "&lon=" + longitude;
+  $.ajax({
+    url: queryWeatherURL,
+    method: "GET"
+  }).done(function(response) {
+    weatherMapsAPIIcons(response);
+  });
+};
+var iconArray = [];
+function weatherMapsAPIIcons(response){
+        iconID = response.weather[0].icon
+        var iconURL = "https://openweathermap.org/img/w/"+ iconID +".png"
+        iconArray.push(iconURL)
+}
+
 //Function for retrieving ajax data from google directions map api based on user input for start and finish locations
 function googleDirectionApiCall () {
 	var queryURLDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startCity + "," + startState+ "&destination=" +
@@ -144,12 +161,13 @@ function googleDirectionApiCall () {
             var stepLon = response.routes[0].legs[0].steps[i].end_location.lng;
             console.log("step distance: " + response.routes[0].legs[0].steps[i].distance.value)
             weatherMapsAPICall(stepLat, stepLon)
+            weatherMapsAPICallTwo(stepLat, stepLon)
             markerMap(response.routes[0].legs[0].steps[i].end_location)
             // This creates an array to calculate the cumulative distance up to this point
                 for (var k = i; k > -1; k--){
                   stepLengthkm = response.routes[0].legs[0].steps[k].distance.value
                   var stepLengthmiles = Math.round(stepLengthkm/1609.344)
-                  stepDistances.push(stepLengthmiles) 
+                  stepDistances.push(stepLengthmiles)
                 }
             console.log("Array of step distances: " + stepDistances)
             //This returns miles
@@ -184,8 +202,8 @@ function markerMap(coordinates) {
     var marker = {
       position: position1,
       map: map,
-      icon: "assets/images/Avatars/Sunny-Day-Avatars/test.jpg"
     };
+
     console.log("marker: " + marker.position.lat)
     markerArray.push(marker);
     console.log("marker array: " + markerArray)
@@ -198,8 +216,13 @@ function initMap() {
     center: {lat: -34.397, lng: 150.644},
     zoom: 8
         });
+
     for (var l = 0; l < markerArray.length; l++) {
-	var markerPip = new google.maps.Marker(markerArray[l])}
+	var markerPip = new google.maps.Marker({
+		position: markerArray[l].position,
+		map: map,
+		icon: iconArray[l]
+		})}
 
 }
     // var marker2 = new google.maps.Marker({
@@ -275,6 +298,10 @@ function pickAvatar(output, response){
 	}
 };
 
+function callMarkerMap() {
+	alert("test");
+	$("body").delay(5000).append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")
+}
 
   function weatherMapsAPIResults(response/*, /distance*/){
           cityName = "";
@@ -347,6 +374,9 @@ $("#launch").on("click", function() {
 	//running firebase log to push user data to firebase
 	fireBaseLog();
 
-	$("body").append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")
+	setTimeout(function(){
+		$("body").append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")}
+		,5000);
+	
 
 })

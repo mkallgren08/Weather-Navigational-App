@@ -115,9 +115,9 @@ database.ref("Trip Data").limitToLast(5).on("child_added", function(childSnapsho
     console.log("End State: " + childSnapshot.val().endState);
     var searchHistory = $("<tr>");
     var startHistory = $("<td>");
-    startHistory.attr("class", "startEntry")
+    startHistory.addClass("startEntry");
     var endHistory = $("<td>");
-    startHistory.attr("class", "endEntry")
+    endHistory.addClass("endEntry")
     startHistory.append(childSnapshot.val().startCity + ", " + childSnapshot.val().startState);
     endHistory.append(childSnapshot.val().endCity + ", " + childSnapshot.val().endState);
     searchHistory.attr("role", "button");
@@ -130,11 +130,11 @@ database.ref("Trip Data").limitToLast(5).on("child_added", function(childSnapsho
 
 $(document).on("click", ".navHistoryData", function(event){
         event.preventDefault();
-        var startingData = $(".startEntry").text();
+        var startingData = this.$(".startEntry").text();
         var result = startingData.split(", ");
         startCity = result[0];
         startState = result[1];
-        var endingData = $(".endEntry").text();
+        var endingData = this.$(".endEntry").text();
         var result2 = endingData.split(", ")
         endCity = result2[0];
         endState = result2[1];

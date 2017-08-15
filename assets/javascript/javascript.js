@@ -128,7 +128,8 @@ database.ref("Trip Data").limitToLast(5).on("child_added", function(childSnapsho
 
 });
 
-$(document).on("click", ".navHistoryData", function(){
+$(document).on("click", ".navHistoryData", function(event){
+        event.preventDefault();
         var startingData = $(".startEntry").text();
         var result = startingData.split(", ");
         startCity = result[0];
@@ -137,10 +138,10 @@ $(document).on("click", ".navHistoryData", function(){
         var result2 = endingData.split(", ")
         endCity = result2[0];
         endState = result2[1];
-        $("#startCity").text(startCity);
-        $("#startState").text(startState);
-        $("#endCity").text(endCity);
-        $("#endState").text(endState);
+        $("#startCity").append(startCity);
+        $("#startState").append(startState);
+        $("#endCity").append(endCity);
+        $("#endState").append(endState);
 
 })
 

@@ -312,6 +312,11 @@ tr:nth-child(even) {
 				color: gold;
 			}
 
+		.star {
+			color: gold;
+			font-size: 18px;
+		}
+
 	  	.rating {
 	  		color: gold;
 	  		text-align: center;

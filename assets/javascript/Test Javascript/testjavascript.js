@@ -35,7 +35,7 @@ var hazthunderArray = [202, 212];
 var hazOvercastArray = [711, 721, 731, 441, 751, 761, 762, 771, 781, 900, 905];
 
 // general overcast day (od avatars)
-var overcastArray = [520, 804, 701];
+var overcastArray = [520, 804];
 
 // =====================================================================
 ////		SNOW
@@ -111,23 +111,6 @@ function getSum(total, num) {
     return total + num;
 }
 
-function weatherMapsAPICallTwo(latitude, longitude/*, distance*/){
-var queryWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
-  "&lat=" + latitude + "&lon=" + longitude;
-  $.ajax({
-    url: queryWeatherURL,
-    method: "GET"
-  }).done(function(response) {
-    weatherMapsAPIIcons(response);
-  });
-};
-var iconArray = [];
-function weatherMapsAPIIcons(response){
-        iconID = response.weather[0].icon
-        var iconURL = "https://openweathermap.org/img/w/"+ iconID +".png"
-        iconArray.push(iconURL)
-}
-
 //Function for retrieving ajax data from google directions map api based on user input for start and finish locations
 function googleDirectionApiCall () {
 	var queryURLDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startCity + "," + startState+ "&destination=" +
@@ -167,7 +150,7 @@ function googleDirectionApiCall () {
                 for (var k = i; k > -1; k--){
                   stepLengthkm = response.routes[0].legs[0].steps[k].distance.value
                   var stepLengthmiles = Math.round(stepLengthkm/1609.344)
-                  stepDistances.push(stepLengthmiles)
+                  stepDistances.push(stepLengthmiles) 
                 }
             console.log("Array of step distances: " + stepDistances)
             //This returns miles
@@ -202,8 +185,8 @@ function markerMap(coordinates) {
     var marker = {
       position: position1,
       map: map,
+      icon: "assets/images/Avatars/Sunny-Day-Avatars/test.jpg"
     };
-
     console.log("marker: " + marker.position.lat)
     markerArray.push(marker);
     console.log("marker array: " + markerArray)
@@ -213,16 +196,11 @@ function initMap() {
 
     // var position2 = {lat: 39.0, lng: -82.58304879999999};
     var map = new google.maps.Map(document.getElementById('secondaryMap'), {
-    center: {lat: 34.397, lng: -90.644},
-    zoom: 4
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
         });
-
     for (var l = 0; l < markerArray.length; l++) {
-	var markerPip = new google.maps.Marker({
-		position: markerArray[l].position,
-		map: map,
-		icon: iconArray[l]
-		})}
+	var markerPip = new google.maps.Marker(markerArray[l])}
 
 }
     // var marker2 = new google.maps.Marker({
@@ -237,21 +215,35 @@ function initMap() {
 
 
   function weatherMapsAPICall(latitude, longitude/*, distance*/){
-    //var cityName = $("#startLocation").val().trim();
-    // var latitude = $("#startLat").val().trim();
-    // var longitude = $("#startLon").val().trim();
-    //console.log(cityName);
     var queryWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
       "&lat=" + latitude + "&lon=" + longitude;
       $.ajax({
         url: queryWeatherURL,
         method: "GET"
       }).done(function(response) {
-        console.log(response)
         weatherMapsAPIResults(response/*, distance*/);
       });
   };
 
+function weatherMapsAPICallTwo(latitude, longitude/*, distance*/){
+var queryWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
+  "&lat=" + latitude + "&lon=" + longitude;
+  $.ajax({
+    url: queryWeatherURL,
+    method: "GET"
+  }).done(function(response) {
+    weatherMapsAPIIcons(response);
+  });
+};
+
+var iconArray = [];
+
+
+function weatherMapsAPIICons(response){
+        iconID = response.weather[0].icon
+        var iconURL = "https://openweathermap.org/img/w/"+ iconID +".png"
+        iconArray.push(iconURL)
+}
   // function getWeatherIcon(response){
   // 	var weatherIconCode
   // 	return weather
@@ -300,10 +292,6 @@ function pickAvatar(output, response){
 	}
 };
 
-function callMarkerMap() {
-	alert("test");
-	$("body").delay(5000).append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")
-}
 
   function weatherMapsAPIResults(response/*, /distance*/){
           cityName = "";
@@ -377,9 +365,6 @@ $("#launch").on("click", function() {
 	//running firebase log to push user data to firebase
 	fireBaseLog();
 
-	setTimeout(function(){
-		$("body").append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")}
-		,5000);
-	
+	$("body").append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")
 
 })

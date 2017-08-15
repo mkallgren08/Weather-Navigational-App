@@ -114,22 +114,15 @@ database.ref("Trip Data").limitToLast(5).on("child_added", function(childSnapsho
     console.log("Start State: " + childSnapshot.val().startState);
     console.log("End State: " + childSnapshot.val().endState);
     var searchHistory = $("<tr>");
-    var startCityHis = $("<td>");
-    var startStateHis = $("<td>");
-    var endCityHis = $("<td>");
-    var endCityHis = $("<td>");
-    startCityHis.append(childSnapshot.val().startCity);
-    startStateHis.append(childSnapshot.val().startState);
-    finishCityHis.append(childSnapshot.val().endCity);
-    endStateHis.append(childSnapshot.val().endState);
+    var startHistory = $("<td>");
+    var endHistory = $("<td>");
+    startHistory.append(childSnapshot.val().startCity + ", " + childSnapshot.val().startState);
+    endHistory.append(childSnapshot.val().endCity + ", " + childSnapshot.val().endState);
     searchHistory.attr("role", "button");
     searchHistory.attr("class", "navHistoryData")
-    searchHistory.append(startCityHis);
-    searchHistory.append(startStateHis);
-    
-
-
-
+    searchHistory.append(startHistory);
+    searchHistory.append(endHistory);
+    $("#navHistoryData").append(searchHistory)
 
 });
 

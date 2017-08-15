@@ -192,8 +192,21 @@
   		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->
 	</div>
 
-	 </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+	<div class="container rateContainer">
+		<h3 class="center" id="ratePrompt">Please Take a Moment to Rate your experience</h3> 
+		<p class="center"><img id="rateImg" src="http://dropzite-images.s3.amazonaws.com/img/49736/de1c5bb/original/2222.png"></p>
+
+		<div class="rating">
+		<span id="fiveStar">☆</span>
+		<span id="fourStar">☆</span>
+		<span id="threeStar">☆</span>
+		<span id="twoStar">☆</span>
+		<span id="oneStar">☆</span>
+		</div>
+	</div>
+
+	 </div>
+
 </nav>
 
 
@@ -207,7 +220,7 @@
 		<!-- <hr> -->
 		
 		<!-- <h3 class="center" id="ratePrompt">Please Take a Moment to Rate your experience</h3> -->
-		<p class="center"><img id="rateImg" src="http://dropzite-images.s3.amazonaws.com/img/49736/de1c5bb/original/2222.png"></p>
+		<!-- <p class="center"><img id="rateImg" src="http://dropzite-images.s3.amazonaws.com/img/49736/de1c5bb/original/2222.png"></p>
 
 		<div class="rating">
 		<span id="fiveStar">☆</span>
@@ -215,19 +228,15 @@
 		<span id="threeStar">☆</span>
 		<span id="twoStar">☆</span>
 		<span id="oneStar">☆</span>
-		</div>
+		</div> -->
 
-		
-			<!-- <div class="row">
-				<div class="col-sm-12"> -->
+					<a><button class="btn-warning rate" onclick="rate()">Rate</button></a>
+	
 					<a><button class="btn-primary newLaunch" onclick="launch()">New Location</button></a>
-	<!-- 			</div>
-			</div>
-			<div class="row"> -->
-			<!-- 	<div class="col-sm-12"> -->
+
 					<a><button class="btn-danger quit" onclick="quit()">Exit</button></a>
-	<!-- 			</div>
-			</div> -->
+	 			</div>
+			
 	</div>
   		
 	</div>
@@ -238,6 +247,7 @@
 		$(".mapImg").hide();
 		$(".consoleData").hide();
 		$(".console").hide();
+		$(".rateContainer").hide();
 
 	// $("#reviewPage").hide();
 	function firstTheme() {
@@ -275,6 +285,11 @@
 		$("#quitScreen").show();
 		$(".nav-top").show();
 		$(".mainContainerDone").show();
+	}
+
+	function rate() {
+		$(".mainContainerDone").hide();
+		$(".rateContainer").show();
 	}
 
 	function launch() {

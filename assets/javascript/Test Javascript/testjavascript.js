@@ -144,6 +144,7 @@ function googleDirectionApiCall () {
             var stepLon = response.routes[0].legs[0].steps[i].end_location.lng;
             console.log("step distance: " + response.routes[0].legs[0].steps[i].distance.value)
             weatherMapsAPICall(stepLat, stepLon)
+            weatherMapsAPICallTwo(stepLat, stepLon)
             markerMap(response.routes[0].legs[0].steps[i].end_location)
             // This creates an array to calculate the cumulative distance up to this point
                 for (var k = i; k > -1; k--){
@@ -214,10 +215,6 @@ function initMap() {
 
 
   function weatherMapsAPICall(latitude, longitude/*, distance*/){
-    //var cityName = $("#startLocation").val().trim();
-    // var latitude = $("#startLat").val().trim();
-    // var longitude = $("#startLon").val().trim();
-    //console.log(cityName);
     var queryWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
       "&lat=" + latitude + "&lon=" + longitude;
       $.ajax({
@@ -228,6 +225,25 @@ function initMap() {
       });
   };
 
+function weatherMapsAPICallTwo(latitude, longitude/*, distance*/){
+var queryWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
+  "&lat=" + latitude + "&lon=" + longitude;
+  $.ajax({
+    url: queryWeatherURL,
+    method: "GET"
+  }).done(function(response) {
+    weatherMapsAPIIcons(response);
+  });
+};
+
+var iconArray = [];
+
+
+function weatherMapsAPIICons(response){
+        iconID = response.weather[0].icon
+        var iconURL = "https://openweathermap.org/img/w/"+ iconID +".png"
+        iconArray.push(iconURL)
+}
   // function getWeatherIcon(response){
   // 	var weatherIconCode
   // 	return weather

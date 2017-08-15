@@ -282,7 +282,8 @@ function pickAvatar(output, response){
           var outputBlock = $("<tr>")
           // Pull the icon from Open Weather API
           var avatarCell = $("<td>")
-          avatarCell.text("Eyyyyy!")
+          avatarCell.append(pickAvatar(avatarCell, response))
+          //avatarCell.text("Eyyyyy!")
           //var avatar = pickAvatar(avatarCell, response)
           outputBlock.append(avatarCell)
           // write the city data

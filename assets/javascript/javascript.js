@@ -115,7 +115,9 @@ database.ref("Trip Data").limitToLast(5).on("child_added", function(childSnapsho
     console.log("End State: " + childSnapshot.val().endState);
     var searchHistory = $("<tr>");
     var startHistory = $("<td>");
+    startHistory.attr("class", "startEntry")
     var endHistory = $("<td>");
+    startHistory.attr("class", "endEntry")
     startHistory.append(childSnapshot.val().startCity + ", " + childSnapshot.val().startState);
     endHistory.append(childSnapshot.val().endCity + ", " + childSnapshot.val().endState);
     searchHistory.attr("role", "button");
@@ -125,6 +127,22 @@ database.ref("Trip Data").limitToLast(5).on("child_added", function(childSnapsho
     $("#navHistoryData").append(searchHistory)
 
 });
+
+$(document).on("click", ".navHistoryData", function(){
+        var startingData = $(".startEntry").text();
+        var result = startingData.split(", ");
+        startCity = result[0];
+        startState = result[1];
+        var endingData = $(".endEntry").text();
+        var result2 = endingData.split(", ")
+        endCity = result2[0];
+        endState = result2[1];
+        $("#startCity").text(startCity);
+        $("#startState").text(startState);
+        $("#endCity").text(endCity);
+        $("#endState").text(endState);
+
+})
 
 function getSum(total, num) {
     return total + num;

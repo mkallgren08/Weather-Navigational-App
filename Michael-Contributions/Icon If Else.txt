@@ -1,0 +1,95 @@
+Icon ID: 
+
+response.weather[0].icon
+
+
+response.weather[0].id = weatherID
+
+
+//=======================================================================
+// 		RAIN & THUNDERSTORMS
+//=======================================================================
+
+// Rain: For everything 
+
+rainIDArray = [500, 501, 502, 503, 520, 521]
+
+// freezing rain
+
+freezingRainID = [511]
+
+// rain with hazardous weather
+
+hazRainArray = [502, 503, 504, 522, 901, 902, 906]
+
+// Thunderstorms (ts avatars)
+
+thunderIDArray = [200, 201, 210, 211, 221, 230, 231, 232]
+
+// Hazardous Thunderstorms (ts avatars)
+
+hazthunderArray = [202, 212]
+
+// =====================================================================
+		OVERCAST
+// =====================================================================
+
+// overcast day for hazardous reasons (odhw avatars)
+
+hazOvercastArray = [711, 721, 731, 441, 751, 761, 762, 771, 781, 900, 905]
+
+// general overcast day (od avatars)
+
+overcastArray = [520, 804]
+
+// =====================================================================
+		SNOW
+// =====================================================================
+
+// heavy snow (hs avatar)
+
+heavySnowArray = [602, 622]
+
+// hazardous heavy snow
+
+hazHeavySnowArray = [] - nothing for now
+
+// snow (sn avatar)
+
+snowArray = [600, 601, 611, 612, 620, 621];
+
+// snow with hazards (snhw avatar)
+
+hazSnowArray = [615, 616];
+
+// =====================================================================
+		CLEAR AND CLOUDY DAYS
+// =====================================================================
+
+// clear day
+
+clearDayArray = [800]
+
+// scattered clouds
+
+
+
+
+
+
+
+
+
+
+================================================================
+Weather - temp:
+
+var degreeF = Math.round(((response.main.temp)-273)*1.8 + 32)
+
+display degreeF + " " + &deg;
+
+================================================================
+Weather Description - gives the actual text for the current weather condition!
+
+response.weather[0].description
+

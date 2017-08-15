@@ -213,8 +213,8 @@ function initMap() {
 
     // var position2 = {lat: 39.0, lng: -82.58304879999999};
     var map = new google.maps.Map(document.getElementById('secondaryMap'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 8
+    center: {lat: 34.397, lng: -90.644},
+    zoom: 4
         });
 
     for (var l = 0; l < markerArray.length; l++) {

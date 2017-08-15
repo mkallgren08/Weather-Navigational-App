@@ -81,12 +81,12 @@ tr:nth-child(even) {
 
 	#consoleContainer{
 		overflow: scroll;
+		max-height: 400px;
 	}
 	  	
 	#tripWeather{
 		min-width: 600px;
 		min-height: 200px;
-		max-height: 400px;
 	}
 
 	.avatarThumb{

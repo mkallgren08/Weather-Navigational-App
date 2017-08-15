@@ -184,7 +184,6 @@ function markerMap(coordinates) {
     var marker = {
       position: position1,
       map: map,
-      icon: "assets/images/Avatars/Sunny-Day-Avatars/test.jpg"
     };
     console.log("marker: " + marker.position.lat)
     markerArray.push(marker);
@@ -198,8 +197,12 @@ function initMap() {
     center: {lat: -34.397, lng: 150.644},
     zoom: 8
         });
+
     for (var l = 0; l < markerArray.length; l++) {
-	var markerPip = new google.maps.Marker(markerArray[l])}
+	var markerPip = new google.maps.Marker({
+		position: markerArray[l].position,
+		map: map
+		})}
 
 }
     // var marker2 = new google.maps.Marker({
@@ -275,6 +278,10 @@ function pickAvatar(output, response){
 	}
 };
 
+function callMarkerMap() {
+	alert("test");
+	$("body").delay(5000).append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")
+}
 
   function weatherMapsAPIResults(response/*, /distance*/){
           cityName = "";
@@ -347,6 +354,9 @@ $("#launch").on("click", function() {
 	//running firebase log to push user data to firebase
 	fireBaseLog();
 
-	$("body").append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")
+	setTimeout(function(){
+		$("body").append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")}
+		,5000);
+	
 
 })

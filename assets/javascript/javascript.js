@@ -152,6 +152,10 @@ function googleDirectionApiCall () {
       // initMap(finishLat, finishLon)
       var tripSteps = Object.keys(response.routes[0].legs[0].steps)
       console.log(tripSteps);
+            var stepLat = response.routes[0].legs[0].steps[0].end_location.lat;
+            var stepLon = response.routes[0].legs[0].steps[0].end_location.lng;
+            weatherMapsAPICallTwo(stepLat, stepLon)
+            markerMap(response.routes[0].legs[0].steps[0].end_location)
       for ( var i = 0; i < tripSteps.length-1; i++){
           if (response.routes[0].legs[0].steps[i].distance.value >= 8000 /*~5 miles*/){
             //clears the distance array of value:
@@ -216,8 +220,8 @@ function initMap() {
     center: {lat: 34.397, lng: -90.644},
     zoom: 4
         });
-
-    for (var l = 0; l < markerArray.length; l++) {
+ 
+  for (var l = 0; l < markerArray.length; l++) {
 	var markerPip = new google.maps.Marker({
 		position: markerArray[l].position,
 		map: map,
@@ -300,11 +304,6 @@ function pickAvatar(output, response){
 	}
 };
 
-function callMarkerMap() {
-	alert("test");
-	$("body").delay(5000).append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")
-}
-
   function weatherMapsAPIResults(response/*, /distance*/){
           cityName = "";
           // make a new block for a city's data-chunk
@@ -379,7 +378,7 @@ $("#launch").on("click", function() {
 
 	setTimeout(function(){
 		$("body").append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")}
-		,5000);
+		,3000);
 	
 
 })

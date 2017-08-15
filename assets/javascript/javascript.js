@@ -111,6 +111,23 @@ function getSum(total, num) {
     return total + num;
 }
 
+function weatherMapsAPICallTwo(latitude, longitude/*, distance*/){
+var queryWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + APIKey + 
+  "&lat=" + latitude + "&lon=" + longitude;
+  $.ajax({
+    url: queryWeatherURL,
+    method: "GET"
+  }).done(function(response) {
+    weatherMapsAPIIcons(response);
+  });
+};
+var iconArray = [];
+function weatherMapsAPIIcons(response){
+        iconID = response.weather[0].icon
+        var iconURL = "https://openweathermap.org/img/w/"+ iconID +".png"
+        iconArray.push(iconURL)
+}
+
 //Function for retrieving ajax data from google directions map api based on user input for start and finish locations
 function googleDirectionApiCall () {
 	var queryURLDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=" + startCity + "," + startState+ "&destination=" +
@@ -144,12 +161,13 @@ function googleDirectionApiCall () {
             var stepLon = response.routes[0].legs[0].steps[i].end_location.lng;
             console.log("step distance: " + response.routes[0].legs[0].steps[i].distance.value)
             weatherMapsAPICall(stepLat, stepLon)
+            weatherMapsAPICallTwo(stepLat, stepLon)
             markerMap(response.routes[0].legs[0].steps[i].end_location)
             // This creates an array to calculate the cumulative distance up to this point
                 for (var k = i; k > -1; k--){
                   stepLengthkm = response.routes[0].legs[0].steps[k].distance.value
                   var stepLengthmiles = Math.round(stepLengthkm/1609.344)
-                  stepDistances.push(stepLengthmiles) 
+                  stepDistances.push(stepLengthmiles)
                 }
             console.log("Array of step distances: " + stepDistances)
             //This returns miles
@@ -185,6 +203,7 @@ function markerMap(coordinates) {
       position: position1,
       map: map,
     };
+
     console.log("marker: " + marker.position.lat)
     markerArray.push(marker);
     console.log("marker array: " + markerArray)
@@ -201,7 +220,8 @@ function initMap() {
     for (var l = 0; l < markerArray.length; l++) {
 	var markerPip = new google.maps.Marker({
 		position: markerArray[l].position,
-		map: map
+		map: map,
+		icon: iconArray[l]
 		})}
 
 }

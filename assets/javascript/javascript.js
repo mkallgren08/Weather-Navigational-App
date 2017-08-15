@@ -35,7 +35,7 @@ var hazthunderArray = [202, 212];
 var hazOvercastArray = [711, 721, 731, 441, 751, 761, 762, 771, 781, 900, 905];
 
 // general overcast day (od avatars)
-var overcastArray = [520, 804];
+var overcastArray = [520, 804, 701];
 
 // =====================================================================
 ////		SNOW
@@ -247,6 +247,7 @@ function initMap() {
         url: queryWeatherURL,
         method: "GET"
       }).done(function(response) {
+        console.log(response)
         weatherMapsAPIResults(response/*, distance*/);
       });
   };

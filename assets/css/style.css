@@ -102,11 +102,15 @@ tr:nth-child(even) {
 
 
 	.mainContainerDone {
-		height: 400px;
+		height: 350px;
     	width: 450px;
     	position: relative;
     	background: white;
 	  	} 	
+
+	  	.rateContainer {
+	  		margin-top: 10%;
+	  	}
 		.mainContainer, .rateContainer {
 
 			
@@ -137,7 +141,7 @@ tr:nth-child(even) {
 	  	}
 
 
-	  	.title, .quitTitle{
+	  	.title, .quitTitle, .arrivedText{
 			/*background-image: url(http://www.uidownload.com/files/396/851/695/blue-background-shading-vector.jpg);*/
 			background: linear-gradient(to right, white, #99ebff, white);
 			background-repeat: no-repeat;
@@ -145,6 +149,16 @@ tr:nth-child(even) {
 			margin-bottom: 20px;
 			font-size: 45px;
 
+	  	}
+
+	  	.road-icon {
+	  		font-size: 40px;
+	  	}
+
+	  	.arrivedText {
+	  		margin-bottom: 15px; 
+	  		background: white;
+	  		color: 
 	  	}
 
 	  	.center {
@@ -169,7 +183,7 @@ tr:nth-child(even) {
 	  	}
 
 	  	.newLaunch {
-	  		top: 77%;
+	  		top: 80%;
 	  		left: 0px;
 	  		width: 100%;
 	  		margin-bottom: 20%;
@@ -179,7 +193,7 @@ tr:nth-child(even) {
 	  	.quit {
 	  		left: 0px;
 	  		width: 100%;
-			top: 90%;
+			top: 78%;
 	  	}
 
 	  	a {
@@ -195,17 +209,17 @@ tr:nth-child(even) {
 
 	  	.rightMap, .leftMap {
 	  		margin-top: 3.5%;
+
 	  	}
 
 	  	.leftMap {
 	  		height: 100%;
-	  		background: blue;
+	  		
 	  	}
 
 	  	.rightMap {
 	  		height: 100%;
-	  		background: red;
-	  	}
+	  			  	}
 		#secondaryMap {
 
 		}
@@ -286,6 +300,7 @@ tr:nth-child(even) {
 	  	}
 
 	  	#rateImg {
+	  		margin: 3%;
 	  		height: 90px;
 	  		/*width: 100px;*/
 	  	}
@@ -294,6 +309,12 @@ tr:nth-child(even) {
 			height: 800px;
 			width: 100%;
 		}
+
+		#thankYou {
+				margin-top: 5%;
+				font-size: 50px;
+				color: gold;
+			}
 
 	  	.rating {
 	  		color: gold;
@@ -310,6 +331,8 @@ tr:nth-child(even) {
 			}
 
 			}
+
+
 			
 			@media only screen and (min-width: 412px) {
 	   		}
@@ -388,9 +411,6 @@ tr:nth-child(even) {
 		}
 
 		@media only screen and (max-width: 800px) {
-			body {
-				background: blue;
-			}
 			
 			.console {
 				font-size: 80px;

@@ -52,8 +52,23 @@
 		margin-top: 14px;
 	}
 
+	#consoleContainer{
+		overflow: scroll;
+	}
 	  	
-		
+	#tripWeather{
+		min-width: 600px;
+		min-height: 200px;
+	}
+
+	.avatarThumb{
+		width: 75px;
+		height: 75px;
+		border-radius: 5px;
+	}
+
+
+
 
 	.mainContainerDone {
 		height: 400px;

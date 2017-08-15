@@ -86,6 +86,7 @@ tr:nth-child(even) {
 	#tripWeather{
 		min-width: 600px;
 		min-height: 200px;
+		max-height: 400px;
 	}
 
 	.avatarThumb{

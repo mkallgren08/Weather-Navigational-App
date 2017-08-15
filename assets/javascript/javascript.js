@@ -190,6 +190,10 @@ function googleDirectionApiCall () {
       // initMap(finishLat, finishLon)
       var tripSteps = Object.keys(response.routes[0].legs[0].steps)
       console.log(tripSteps);
+            var stepLat = response.routes[0].legs[0].steps[0].end_location.lat;
+            var stepLon = response.routes[0].legs[0].steps[0].end_location.lng;
+            weatherMapsAPICallTwo(stepLat, stepLon)
+            markerMap(response.routes[0].legs[0].steps[0].end_location)
       for ( var i = 0; i < tripSteps.length-1; i++){
           if (response.routes[0].legs[0].steps[i].distance.value >= 8000 /*~5 miles*/){
             //clears the distance array of value:
@@ -251,11 +255,11 @@ function initMap() {
 
     // var position2 = {lat: 39.0, lng: -82.58304879999999};
     var map = new google.maps.Map(document.getElementById('secondaryMap'), {
-    center: {lat: 34.397, lng: -90.644},
-    zoom: 4
+    center: markerArray[0].position,
+    zoom: 6
         });
-
-    for (var l = 0; l < markerArray.length; l++) {
+ 
+  for (var l = 0; l < markerArray.length; l++) {
 	var markerPip = new google.maps.Marker({
 		position: markerArray[l].position,
 		map: map,
@@ -267,6 +271,7 @@ function initMap() {
     //   position: position2,
     //   map: map
     // });    
+
 
 
 //===================================================================================================
@@ -338,11 +343,6 @@ function pickAvatar(output, response){
 	}
 };
 
-function callMarkerMap() {
-	alert("test");
-	$("body").delay(5000).append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")
-}
-
   function weatherMapsAPIResults(response/*, /distance*/){
           cityName = "";
           // make a new block for a city's data-chunk
@@ -393,7 +393,9 @@ function callMarkerMap() {
 // <<<<<<< HEAD
 // =======
 
-
+function postLocation() {
+$("#currentDirections").html("Start Location: " + startCity + ", " + startState + "<br>End Location: " + endCity + ", " + endState)
+}
 // >>>>>>> c99f52d21a5bc1acf63231bc20fffae52216dfdf
 //On click event for startpages launch function which will log the start location and finish location as variables. 
 $("#launch").on("click", function() {
@@ -415,9 +417,11 @@ $("#launch").on("click", function() {
 	//running firebase log to push user data to firebase
 	fireBaseLog();
 
+  postLocation();
+
 	setTimeout(function(){
 		$("body").append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")}
-		,5000);
+		,3000);
 	
 
 })

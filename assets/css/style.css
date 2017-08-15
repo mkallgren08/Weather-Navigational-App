@@ -1,4 +1,4 @@
-	body {
+body {
 			/*margin-top: 10%;*/
 	  		background-image: url(https://t4.ftcdn.net/jpg/00/68/82/57/240_F_68825774_isOmOjQrm2sHgPeO5j1dmP8tGKBpT6j1.jpg);
 	  		background-size: cover;
@@ -107,7 +107,7 @@ tr:nth-child(even) {
     	position: relative;
     	background: white;
 	  	} 	
-		.mainContainer {
+		.mainContainer, .rateContainer {
 
 			
 			height: 400px;
@@ -151,7 +151,7 @@ tr:nth-child(even) {
 	  		text-align: center;
 	  	}
 
-	  	.launchBtn, .newLaunch, .quit {
+	  	.launchBtn, .newLaunch, .quit, .rate{
 	  		width: 50%;
 	  		margin-top: 20px;
 	  		font-size: 20px;
@@ -160,6 +160,12 @@ tr:nth-child(even) {
 	  		border: black 2px solid;
 	  		position: absolute;
 	  		left: 25%;
+	  	}
+
+	  	.rate {
+	  		top: 64%;
+	  		width: 100%;
+	  		left: 0px;
 	  	}
 
 	  	.newLaunch {
@@ -392,6 +398,7 @@ tr:nth-child(even) {
 
 
 		}
+
 
 		
 		

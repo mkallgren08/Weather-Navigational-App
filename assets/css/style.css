@@ -40,11 +40,14 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-/*.navStyle {
-	position: relative;  <-- Added 
-    z-index: 1; /* <-- Added 
+.dropDownStyle {
+	/*position: relative;  <-- Added */
+	position: relative;
+    z-index: 1; 
 }
-*/
+
+
+
 
 
 	.navBrandStyle, .navStyle, .bottomNavStyle {

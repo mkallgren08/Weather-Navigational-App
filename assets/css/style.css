@@ -1,5 +1,4 @@
 body {
-	/*margin-top: 10%;*/
 	background: url(https://t4.ftcdn.net/jpg/00/68/82/57/240_F_68825774_isOmOjQrm2sHgPeO5j1dmP8tGKBpT6j1.jpg) no-repeat center center fixed;
 	background-size: cover;
 }
@@ -73,7 +72,8 @@ tr:nth-child(even) {
 }
 
 .navBtn {
-	margin-top: 14px;
+	font-size: 25px;
+	margin: 13px 0 13px 20px;
 }
 
 #consoleContainer{
@@ -136,7 +136,7 @@ h3 {
 	background: linear-gradient(to right, white, #99ebff, white);
 	background-repeat: no-repeat;
 	padding:2%; 
-	margin-bottom: 20px;
+	margin-bottom: 2.5%;
 	font-size: 45px;
 }
 
@@ -248,7 +248,7 @@ a {
 .consoleTitle {
 	color: white;
 	font-size: 60px;
-	background: blue;
+	background: grey;
 }
 
 td {
@@ -310,60 +310,25 @@ th {
 	unicode-bidi: bidi-override;
 	direction: rtl;
 }
+.navbar-collapse.collapse {
+  display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+  float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+  margin-right: -15px !important;
+}
+
+.navbar-right {
+  float: right!important;
+}
 	
 .rating > span:hover ~ span:before {
 	content: "\2605";
 	position: absolute;
-}
-	
-@media only screen and (min-width: 412px) {
-
-}
-
-@media only screen and (max-height: 660px) {
-    body {
-        background-size: 100% 750px;
-        padding: 0px;
-	}
-
-	.mainContainer {
-		height: 40%;
-		width: 80%;
-	}
-
-	.title, .quitTitle {
-		font-size: 70px;
-		margin-bottom: 60px;
-	}
-
-	.quitTitle {
-		font-size: 50px;
-		margin-bottom: 0px;
-	}
-
-	h3 {
-		font-size: 28px;
-	}
-
-	.state {
-		font-size: 28px;
-	}
-
-	.city {
-		font-size: 28px;
-	}
-   	#rateImg {
-		height: 60px;
-   	}
-   	span {
-   		font-size: 50px;
-   	}
-}
-
-@media only screen and (min-height: 750px) {
-	body {
-    	background-size: 100% 1000px;
-	}
 }
 
 @media only screen and (min-height: 1000px) {
@@ -387,14 +352,88 @@ th {
 	}
 }
 
-@media only screen and (max-width: 320px) {
-
-}
-
-@media only screen and (min-width: 321px) and (max-width: 768px) {
-	#currentDirections {
-		margin: 0 0 100px 0;
+/*For portrait phones*/
+@media only screen and (max-width: 397px) {
+	.mainContainer {
+		width: 90%;
+	}
+	.mainContainerDone {
+		width: 90%;
+	}	
+	.navBtn {
+	font-size: 25px;
+	margin: 39px 0 39px 0;
+	width: 100%;
+	text-align: center
+	}
+	.navbar-inverse {
+		padding: 0;
+	}
+	#dropdownMenu3 {
+		font-size: 5vw;
+		width: 100px;
+		margin: 5px 5px;
+		float: left;
+	}
+	#dropdownMenu4 {
+		font-size: 5vw;		
+		width: 100%;
+		margin: 5px 5px;
+		float: left;		
+	}
+	#dropdownMenu1 {
+		font-size: 5vw;		
+		width: 100%;
+		margin: 5px 5px;
+		float: left;		
+	}	
+	.navStyle {
+		margin: 0 3%;
+		width: 25%;
+		float: left;
+	}
+	.dropDown {
+		height: 30px;
+	}
+	.navbar-nav {
+		margin:0;
 	}
 }
 
-@media only screen and (m)i
+/*For landscape phones/tablets*/
+@media only screen and (min-width: 398px) and (max-width: 768px) {
+	#currentDirections {
+		margin: 0 0 125px 0;	
+	}
+	.mainContainer {
+	width: 90%;
+	margin: 20% 0 0 5%;
+	}
+	.mainContainerDone {
+	width: 90%;
+	margin: 20% 0 0 5%;
+	}	
+	#dropdownMenu3 {
+		width: 100px;
+	}
+	#dropdownMenu4 {
+		width: 80px;
+	}
+	#dropdownMenu1 {
+		width: 80px;
+		margin: 40% 2;
+	}
+	.navBtn {
+		font-size: 25px;
+		margin: 39px 0 39px 20px;
+	}
+	.navbar-inverse {
+		padding: 0;
+	}
+	.navStyle {
+		margin: 36px 1%;
+	}
+	.navbar-nav {
+		margin:0;
+	}
+}

@@ -20,6 +20,8 @@ var stepDistances = []
 
 var stepLength = ""
 
+var stateArray = ["al", "ak", "az", "ar", "ca", "co", "ct", "de", "fl", "ga", "hi", "id", "il", "in", "ia", "ks", "ky", "la", "me", "md", "ma", "mi", "mn", "ms", "mo", "mt", "ne", "nv", "nh", "nj", "nm", "ny", "nc", "nd", "oh", "ok", "or", "pa", "ri", "sc", "sd", "tn", "tx", "ut", "vt", "va", "wa", "wv", "wi", "wy", "dc"]
+
 //=======================================================================
 // 		RAIN & THUNDERSTORMS
 //=======================================================================
@@ -391,12 +393,25 @@ $("#currentDirections").html("Start Location: " + startCity + ", " + startState 
 //On click event for startpages launch function which will log the start location and finish location as variables. 
 $("#launch").on("click", function() {
 	
+  $("#tripWeather").html('')
+  iconArray = [];
+  markerArray = [];
+  $(".alert-danger").hide()
+
   //Logging user input and storing it into variables
 	startCity = $("#startCity").val().trim();
 	startState = $("#startState").val().trim();
 	endCity = $("#endCity").val().trim();
 	endState = $("#endState").val().trim();
 	
+  if (stateArray.indexOf(startState.toLowerCase()) === -1 || stateArray.indexOf(endState.toLowerCase()) === -1) {
+    $(".mapContainer").hide();
+    $(".alert-success").hide();
+    $(".alert-danger").show();
+  } else {
+
+   $(".mapContainer").show(); 
+
 	//running ajax command for retrieval of google direction maps api after user input variables have been saved.
 	googleDirectionApiCall();
 
@@ -413,4 +428,5 @@ $("#launch").on("click", function() {
 	setTimeout(function(){
 		$("body").append("<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDopEOP1NAJOEi6wHEHABa_qz8Z6Npe_E&callback=initMap'></script>")}
 		,3000);
+  }
 })

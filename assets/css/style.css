@@ -2,23 +2,22 @@ body {
 	/*margin-top: 10%;*/
 	background: url(https://t4.ftcdn.net/jpg/00/68/82/57/240_F_68825774_isOmOjQrm2sHgPeO5j1dmP8tGKBpT6j1.jpg) no-repeat center center fixed;
 	background-size: cover;
-	 }
+}
 
-	.nav-top {
-		margin-bottom: 10%;
-		position: relative;
-		top: 0px;
-		left:0px;
-		padding-left: 60px;
-		padding-right: 60px;
-		opacity: 0.7;
-	}
+.nav-top {
+	margin-bottom: 10%;
+	position: relative;
+	top: 0px;
+	left:0px;
+	padding-left: 60px;
+	padding-right: 60px;
+	opacity: 0.7;
+}
 
-	table {
-
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 td, th {
@@ -37,393 +36,347 @@ tr:nth-child(even) {
 }
 
 .dropDownStyle {
-	/*position: relative;  <-- Added */
 	position: relative;
     z-index: 1; 
 }
+.navBrandStyle, .navStyle, .bottomNavStyle {
+	float: right;
+	margin: 10px;
+	background: transparent;
+	color: white;
+}
 
+.bottomNavStyle {
+	background: white;
+}
 
+.navBrandStyle {
+	float: left;
+}
 
+.dropDown {
+	background: transparent;
+	color: white;
+	border: none;
+}
 
+.dropBtn {
+	width: 100%;
+	text-align: center;
+	opacity: 1.7;
+	color: black;
+}
 
-	.navBrandStyle, .navStyle, .bottomNavStyle {
-		float: right;
-		margin: 10px;
-		background: transparent;
-		color: white;
+.navBtn {
+	margin-top: 14px;
+}
+
+#consoleContainer{
+	overflow: scroll;
+	max-height: 400px;
+}
+  	
+#tripWeather{
+	min-width: 600px;
+	min-height: 200px;
+}
+
+.avatarThumb{
+	width: 75px;
+	height: 75px;
+	border-radius: 5px;
+}
+
+.mainContainerDone {
+	height: 350px;
+	width: 450px;
+	position: relative;
+	background: white;
+ } 	
+
+.rateContainer {
+	margin-top: 10%;
+}
+
+.mainContainer, .rateContainer {
+	height: 400px;
+	width: 450px;
+	background: white;
+	position: relative;
+}
+
+.city {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	width: 70%;
+	height: 60px;
+	padding: 15px;
+}
+
+.state {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	width: 20%;
+	height: 60px;
+	padding: 15px 0 15px 15px;	  		
+}
+
+h3 {
+	padding: 15px 0 2px 15px;
+}
+
+.title, .quitTitle, .arrivedText{
+	background: linear-gradient(to right, white, #99ebff, white);
+	background-repeat: no-repeat;
+	padding:2%; 
+	margin-bottom: 20px;
+	font-size: 45px;
+}
+
+.road-icon {
+	font-size: 40px;
+}
+
+.arrivedText {
+	margin-bottom: 15px; 
+	background: white;
+	color: 
+}
+
+.center {
+	text-align: center;
+}
+
+.launchBtn, .newLaunch, .quit, .rate{
+	width: 50%;
+	margin-top: 20px;
+	font-size: 20px;
+	padding: 15px;
+	border: black 2px solid;
+	position: absolute;
+	left: 25%;
+}
+
+.rate {
+	top: 64%;
+	width: 100%;
+	left: 0px;
+}
+
+.newLaunch {
+	top: 80%;
+	left: 0px;
+	width: 100%;
+	margin-bottom: 20%;
+}
+
+.quit {
+	left: 0px;
+	width: 100%;
+	top: 78%;
+}
+
+a {
+	color: white;
+}
+
+.mapContainer {
+	height: auto;
+	width: auto;
+	position: relative;
+}
+
+.rightMap, .leftMap {
+	margin-top: 3.5%;
+}
+
+.leftMap {
+	height: 100%;
+}
+
+.rightMap {
+	height: 100%;
+}
+	
+.map {
+	background-image: url(https://www.empresaiceberg.cl/images/ubicacionarica.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 662px;
+	width auto;
+}
+
+.mapImg {
+	width: 100%;
+	height: 500px;
+	background-repeat: no-repeat;
+}
+
+.console {
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 60px;
+	margin: 0px;
+	padding-left: 40px;
+}
+
+.consoleData {
+	width: 100%;
+	margin-top: 0px;
+	margin-right: 10px;
+}
+
+#consoleContainer {
+	height: 100%; 
+	width: 100%;
+}
+
+.consoleStructure {
+	color: black;
+}
+
+.consoleTitle {
+	color: white;
+	font-size: 60px;
+	background: blue;
+}
+
+td {
+	color:black;
+}
+
+th {
+	color:black;
+}
+
+#consoleLog {
+	font-size: 20px;
+}
+
+.dropDown {
+	height: 80%;
+	width: 100%;
+}
+
+.quitBtn {
+	margin-top: 10px;
+	float: right;
+}
+
+#done {
+	color: black;
+}
+
+#ratePrompt {
+	font-size: 30px;
+}
+
+#rateImg {
+	margin: 3%;
+	height: 90px;
+}
+
+#secondaryMap {
+	height: 800px;
+	width: 100%;
+}
+
+#thankYou {
+	margin-top: 5%;
+	font-size: 50px;
+	color: gold;
+}
+
+.star {
+	color: gold;
+	font-size: 18px;
+}
+
+.rating {
+	color: gold;
+	text-align: center;
+	font-size: 60px;
+	margin-top: 10%;
+	unicode-bidi: bidi-override;
+	direction: rtl;
+}
+	
+.rating > span:hover ~ span:before {
+	content: "\2605";
+	position: absolute;
+}
+	
+@media only screen and (min-width: 412px) {
+
+}
+
+@media only screen and (max-height: 660px) {
+    body {
+        background-size: 100% 750px;
+        padding: 0px;
 	}
 
-	.bottomNavStyle {
-		background: white;
+	.mainContainer {
+		height: 40%;
+		width: 80%;
 	}
 
-	.navBrandStyle {
-		float: left;
+	.title, .quitTitle {
+		font-size: 70px;
+		margin-bottom: 60px;
 	}
 
-	.dropDown {
-
-		background: transparent;
-		color: white;
-		border: none;
+	.quitTitle {
+		font-size: 50px;
+		margin-bottom: 0px;
 	}
 
-	.dropBtn {
-		width: 100%;
-		text-align: center;
-		opacity: 1.7;
-		color: black;
+	h3 {
+		font-size: 28px;
 	}
 
-	.navBtn {
-		margin-top: 14px;
+	.state {
+		font-size: 28px;
 	}
 
-	#consoleContainer{
-		overflow: scroll;
-		max-height: 400px;
+	.city {
+		font-size: 28px;
 	}
-	  	
-	#tripWeather{
-		min-width: 600px;
-		min-height: 200px;
+   	#rateImg {
+		height: 60px;
+   	}
+   	span {
+   		font-size: 50px;
+   	}
+}
+
+@media only screen and (min-height: 750px) {
+	body {
+    	background-size: 100% 1000px;
 	}
+}
 
-	.avatarThumb{
-		width: 75px;
-		height: 75px;
-		border-radius: 5px;
+@media only screen and (min-height: 1000px) {
+	body {
+    	background-size: 100% 1800px;
 	}
-
-
-
-
-	.mainContainerDone {
-		height: 350px;
-    	width: 450px;
-    	position: relative;
-    	background: white;
-	  	} 	
-
-	  	.rateContainer {
-	  		margin-top: 10%;
-	  	}
-		.mainContainer, .rateContainer {
-
-			
-			height: 400px;
-			width: 450px;
-			background: white;
-			position: relative;
-			/*left: 0%;*/
-		}
-	  	.city {
-	  		border-top: none;
-	  		border-left: none;
-	  		border-right: none;
-	  		width: 70%;
-	  		height: 60px;
-	  		padding: 15px;
-	  	}
-	  	.state {
-	  		border-top: none;
-	  		border-left: none;
-	  		border-right: none;
-	  		width: 20%;
-	  		height: 60px;
-	  		padding: 15px 0 15px 15px;	  		
-	  	}
-	  	h3 {
-	  		padding: 15px 0 2px 15px;
-	  	}
-
-
-	  	.title, .quitTitle, .arrivedText{
-			/*background-image: url(http://www.uidownload.com/files/396/851/695/blue-background-shading-vector.jpg);*/
-			background: linear-gradient(to right, white, #99ebff, white);
-			background-repeat: no-repeat;
-			padding:2%; 
-			margin-bottom: 20px;
-			font-size: 45px;
-
-	  	}
-
-	  	.road-icon {
-	  		font-size: 40px;
-	  	}
-
-	  	.arrivedText {
-	  		margin-bottom: 15px; 
-	  		background: white;
-	  		color: 
-	  	}
-
-	  	.center {
-	  		text-align: center;
-	  	}
-
-	  	.launchBtn, .newLaunch, .quit, .rate{
-	  		width: 50%;
-	  		margin-top: 20px;
-	  		font-size: 20px;
-	  		padding: 15px;
-	  		/*border-radius: 50%;*/
-	  		border: black 2px solid;
-	  		position: absolute;
-	  		left: 25%;
-	  	}
-
-	  	.rate {
-	  		top: 64%;
-	  		width: 100%;
-	  		left: 0px;
-	  	}
-
-	  	.newLaunch {
-	  		top: 80%;
-	  		left: 0px;
-	  		width: 100%;
-	  		margin-bottom: 20%;
-
-	  	}
-
-	  	.quit {
-	  		left: 0px;
-	  		width: 100%;
-			top: 78%;
-	  	}
-
-	  	a {
-	  		color: white;
-
-	  	}
-
-	  	.mapContainer {
-	  		height: auto;
-			width: auto;
-	  		position: relative;
-	  	}
-
-	  	.rightMap, .leftMap {
-	  		margin-top: 3.5%;
-
-	  	}
-
-	  	.leftMap {
-	  		height: 100%;
-	  		
-	  	}
-
-	  	.rightMap {
-	  		height: 100%;
-	  			  	}
-		#secondaryMap {
-
-		}
-	  	.map {
-	  		background-image: url(https://www.empresaiceberg.cl/images/ubicacionarica.jpg);
-	  		background-size: 100% 100%;
-	  		background-repeat: no-repeat;
-	  		height: 662px;
-	  		width auto;
-	  	}
-
-	  	.mapImg {
-	  		width: 100%;
-	  		height: 500px;
-	  		background-repeat: no-repeat;
-
-	  	}
-
-	  	.console {
-	  		width: 100%;
-	  		position: fixed;
-	  		bottom: 0px;
-	  		left: 0px;
-	  		height: 60px;
-	  		margin: 0px;
-	  		padding-left: 40px;
-	  	}
-
-	  	.consoleData {
-	  		
-	  		width: 100%;
-	  		margin-top: 0px;
-	  		margin-right: 10px;
-	  		/*overflow: scroll;*/
-	  	}
-
-	  	#consoleContainer {
-	  		height: 100%; 
-	  		width: 100%;
-	  	}
-
-	  	.consoleStructure {
-	  		color: black;
-	  	}
-
-		.consoleTitle {
-			color: white;
-	    	font-size: 60px;
-	    	background: blue;
-		}
-		td {
-			color:black;
-		}
-		th {
-			color:black;
-		}
-		#consoleLog {
-			font-size: 20px;
-		}
-
-		.dropDown {
-			height: 80%;
-			width: 100%;
-		}
-
-		.quitBtn {
-			margin-top: 10px;
-			float: right;
-		}
-
-
-	  	#done {
-	  		color: black;
-	  	}
-
-	  	#ratePrompt {
-	  		font-size: 30px;
-	  	}
-
-	  	#rateImg {
-	  		margin: 3%;
-	  		height: 90px;
-	  		/*width: 100px;*/
-	  	}
-
-		#secondaryMap {
-			height: 800px;
-			width: 100%;
-		}
-
-		#thankYou {
-				margin-top: 5%;
-				font-size: 50px;
-				color: gold;
-			}
-
-		.star {
-			color: gold;
-			font-size: 18px;
-		}
-
-	  	.rating {
-	  		color: gold;
-	  		text-align: center;
-	  		font-size: 60px;
-	  		margin-top: 10%;
-			  unicode-bidi: bidi-override;
-			  direction: rtl;
-			}
-			.rating > span:hover:before,
-			.rating > span:hover ~ span:before {
-			   content: "\2605";
-			   position: absolute;
-			}
-
-			}
-
-
-			
-			@media only screen and (min-width: 412px) {
-	   		}
-
-	@media only screen and (max-height: 660px) {
-	    body {
-	        background-size: 100% 750px;
-	        padding: 0px;
-	    	/*margin-top: 15%;*/
-			}
-
-	    	.mainContainer {
-	    		height: 40%;
-	    		width: 80%;
-	    	}
-
-	    	.title, .quitTitle {
-	    		font-size: 70px;
-	    		margin-bottom: 60px;
-	    	}
-
-	    	.quitTitle {
-	    		font-size: 50px;
-	    		margin-bottom: 0px;
-	    	}
-
-	    	h3 {
-	    		font-size: 28px;
-	    	}
-
-	    	.state {
-	    		font-size: 28px;
-	    	}
-
-	    	.city {
-	    		font-size: 28px;
-	    	}
-
-	    	
-
-	    	#rateImg {
-				height: 60px;
-	    	}
-
-	    	span {
-	    		font-size: 50px;
-	    	}
-
-	    	
-
-	    
-
-
-		}
-
-		@media only screen and (min-height: 750px) {
-	    body {
-	        background-size: 100% 1000px;
-	    	}
-
-		}
-
-		@media only screen and (min-height: 1000px) {
-	    body {
-	        background-size: 100% 1800px;
-	    	}
-		}
-
-		@media only screen and (max-width: 1000px) {
-			.mapImg {
-				height: 600px;
-			}
-			.mapSize {
-				height: 600px;
-			}
-		}
-
-		@media only screen and (max-width: 800px) {
-			
-			.console {
-				font-size: 80px;
-			}
-
-
-		}
-
-
-		
-		
-
-		
-
+}
+
+@media only screen and (max-width: 1000px) {
+	.mapImg {
+		height: 600px;
+	}
+	.mapSize {
+		height: 600px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.console {
+		font-size: 80px;
+	}
+}

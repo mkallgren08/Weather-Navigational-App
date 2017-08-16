@@ -1,277 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-	<title>Sign In</title>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	  <!-- Latest compiled and minified CSS -->
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	  <!-- Optional theme -->
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	  <!-- Latest compiled and minified JavaScript -->
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  
-	  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-	  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>	  
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<title>Sign In</title>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		  <!-- Latest compiled and minified CSS -->
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		  <!-- Optional theme -->
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		  <!-- Latest compiled and minified JavaScript -->
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	  
-</head>
-<body>
-	<nav class="navbar navbar-inverse nav-top">
-	  <h2 class="navBrandStyle navBtn">
-	  	Brand
-	  </h2>
-		<div class="dropdown navStyle">
-		  <button class="btn btn-default dropdown-toggle dropDown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		    Reviews
-		    <span class="caret"></span>
-		  </button>
-		  <ul style="background: white;" class="dropdown-menu-right dropdown-menu dropDownStyle" aria-labelledby="dropdownMenu1">
-		  <div class="container">
-		  	<table id="reviewTable">
-		  		<tr>
-		  			<th>Reviews</th>
-		  		</tr>
-		  		<tr>
-		  			<td><i class="glyphicon glyphicon-star star"></i>5 Star Rating <i class="glyphicon glyphicon-star star"></i></td>
-		  		</tr>
-		  		<tr>
-		  			<td><i class="glyphicon glyphicon-star star"></i>4 Star Rating <i class="glyphicon glyphicon-star star"></i></td>
-		  		</tr>
-		  		<tr>
-		  			<td><i class="glyphicon glyphicon-star star"></i>5 Star Rating <i class="glyphicon glyphicon-star star"></i></td>
-		  		</tr>
-		  	</table>
-		  </div>
-		  </ul>
+		  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+		  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>	  
+		  
+	</head>
+	<body>
+
+		<!--Nav button fixed to top of page-->
+		<nav class="navbar navbar-inverse nav-top">
+		  <h1 class="navBrandStyle navBtn">
+		  	GeoVane
+		  </h1>
+			<div class="dropdown navStyle">
+			  <button class="btn btn-default dropdown-toggle dropDown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Reviews
+			  	<span class="caret"></span>
+			  </button>
+			  <ul style="background: white;" class="dropdown-menu-right dropdown-menu dropDownStyle" aria-labelledby="dropdownMenu1">
+				  <div class="container">
+				  	<table id="reviewTable">
+				  		<tr>
+				  			<th>Reviews</th>
+				  		</tr>
+				  		<tr>
+				  			<td><i class="glyphicon glyphicon-star star"></i>5 Star Rating <i class="glyphicon glyphicon-star star"></i></td>
+				  		</tr>
+				  		<tr>
+				  			<td><i class="glyphicon glyphicon-star star"></i>4 Star Rating <i class="glyphicon glyphicon-star star"></i></td>
+				  		</tr>
+				  		<tr>
+				  			<td><i class="glyphicon glyphicon-star star"></i>5 Star Rating <i class="glyphicon glyphicon-star star"></i></td>
+				  		</tr>
+				  	</table>
+				  </div>
+			  </ul>
+			</div>
+		  <div class="dropdown navStyle">
+			  <button class="btn btn-default dropdown-toggle dropDown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Nav History 
+			    <span class="caret"></span>
+			  </button>
+			  <ul style="background: white;" class="dropdown-menu-right dropdown-menu dropDownStyle" aria-labelledby="dropdownMenu1">
+				  <div class="container">
+				  	<table id = navHistoryData>
+				  		<tr id = "navHistoryHeader">
+				  			<th>Starting Point</th>
+				  			<th>Ending Point</th>
+				  		</tr>
+				  	</table>
+				  </div>
+			  </ul>
+			</div>
+		  <div class="dropdown navStyle">
+			  <button class="btn btn-default dropdown-toggle dropDown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Theme
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu navStyle" aria-labelledby="dropdownMenu1">
+			    <li><button onclick="firstTheme()" class="dropBtn">Cloud</button></li>
+			    <li><button onclick="secondTheme()" class="dropBtn">Storm</button></li>
+			    <li><button onclick="thirdTheme()" class="dropBtn">Seasons</button></li>
+			  </ul>
+			</div>
+		</nav>
+
+		<!--Container which houses initial start/end input boxes-->
+		<div class="container mainContainer">
+			<div class="title">
+	  			<h1 class="center">Where To?</h1>
+			</div>
+			<h3>Start Location</h3>
+	  		<input class="city" id="startCity" type="text" name="city" placeholder="Charlotte">
+	  		<input class="state" id="startState" type="text" placeholder="NC">
+	  		<br>
+	  		<h3>Ending Location</h3>
+	  		<input class="city" id="endCity" type="text" name="state" placeholder="Washington">
+	  		<input class="state" id="endState" type="text" placeholder="DC">
+	  		<br>
+	  		<button class="btn-primary launchBtn" id="launch" onclick="launchMap()">Launch</button><!-- </a> -->
 		</div>
 
-	  <div class="dropdown navStyle">
-		  <button class="btn btn-default dropdown-toggle dropDown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		    Nav History 
-		    <span class="caret"></span>
-		  </button>
-		  <ul style="background: white;" class="dropdown-menu-right dropdown-menu dropDownStyle" aria-labelledby="dropdownMenu1">
-		  <div class="container">
-		  	<table id = navHistoryData>
-		  		<tr id = "navHistoryHeader">
-		  			<th>Starting Point</th>
-		  			<th>Ending Point</th>
-		  		</tr>
+		<!--Container which houses dynamically generated maps-->
+		<div class="container mapContainer">
+			<div class="row">
 
-		  	</table>
-		  </div>
-		  </ul>
-		</div>
-
-	
-
-	  <div class="dropdown navStyle">
-		  <button class="btn btn-default dropdown-toggle dropDown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		    Theme
-		    <span class="caret"></span>
-		  </button>
-		  <ul class="dropdown-menu navStyle" aria-labelledby="dropdownMenu1">
-		    <li><button onclick="firstTheme()" class="dropBtn">Cloud</button></li>
-		    <li><button onclick="secondTheme()" class="dropBtn">Storm</button></li>
-		    <li><button onclick="thirdTheme()" class="dropBtn">Seasons</button></li>
-		  </ul>
-		</div>
-
-	</nav>
-	<div class="container mainContainer">
-		<div class="title">
-  			<h1 class="center">Where To?</h1>
-		</div>
-		<h3>Start Location</h3>
-  		<input class="city" id="startCity" type="text" name="city" placeholder="Charlotte">
-  		<input class="state" id="startState" type="text" placeholder="NC">
-  		<br>
-  		<h3>Ending Location</h3>
-  		<input class="city" id="endCity" type="text" name="state" placeholder="Washington">
-  		<input class="state" id="endState" type="text" placeholder="DC">
-  		<br>
-  		<!-- <a href="mapPage.html"> -->
-  		<button class="btn-primary launchBtn" id="launch" onclick="launchMap()">Launch</button><!-- </a> -->
-	</div>
-
-
-	<div class="container mapContainer">
-		<div class="row">
-			<div class="col-sm-6" id="mapSize">
-				<div class="leftMap">
-					<iframe style="height: 500px;" 	class="mapImg" id="mapLocation"></iframe>
+			  <!--Container which houses map for diriving instructions-->
+				<div class="col-sm-6" id="mapSize">
+					<div class="leftMap">
+						<iframe style="height: 500px;" 	class="mapImg" id="mapLocation"></iframe>
+					</div>
+				</div>
+		
+				<!--Container which houses map for weather data-->
+				<div class="col-sm-6" id="mapSize">
+					<div class="rightMap">
+						<div style="height: 500px;" class="mapImg" id="secondaryMap"></div>
+					</div>
 				</div>
 			</div>
-	
-			<div class="col-sm-6" id="mapSize">
-				<div class="rightMap">
-					<div style="height: 500px;" class="mapImg" id="secondaryMap">
+		</div>
+
+		<!--Container which will list out the start/end location-->
+		<div class="alert alert-success consoleData center" role="alert" id="currentDirections">Starting Location: Test   Ending Location: Test</div>
+		
+		<!--Container which will hold the bottom nav bar which will contain our quit button/weather table toggle-->
+		<nav class="navbar navbar-default console">
+	  	<div class="container-fluid">
+	    	<div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button> 
+	    	</div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <div class="dropup bottomNavStyle">
+							
+							<!--Button which contains dropdown menu that stores navigational weather data-->
+		          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		            Trip Weather Info
+		            <span class="caret"></span>
+		          </button>
+		          
+							<!--menu which will store dynamically generated weather data-->
+		          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+		            <div id="consoleContainer">
+		            	<h1 class="center consoleStructure consoleTitle">Trip Weather Data</h1>
+		            	<div class="container-fluid">
+		            		<table class = "table-responsive table-striped table-bordered" id = "tripWeather">
+		            			<tr class = "table-header"> 
+												<td>Avatars</td>
+												<td>City</td>
+												<td>Weather</td>
+												<td>Temperature</td>
+												<td>Humidity</td>
+												<td>Wind Speed</td>
+		            			</tr>
+		            		</table>
+		            	</div>
+		            </div>
+		          </ul>
+		        </div>
+	      	</ul>
+
+					<!--Button which will move the user from the map screen to our final screen where they can review/quit/start a new route-->
+		      <button onclick="quitScreenAction()" type="quit" class="btn btn-danger quitBtn">Quit</button>
+			    <div class="container mainContainer" id="quitScreen">
+						<div class="title">
+				  			<h1 class="center">Title</h1>
+						</div>
+						<h3>Start Location</h3>
+			  		<input class="city" id="startCity" type="text" name="city" placeholder="Charlotte">
+			  		<input class="state" id="startState" type="text" placeholder="NC">
+			  		<br>
+			  		<h3>Ending Location</h3>
+			  		<input class="city" id="endCity" type="text" name="state" placeholder="Washington">
+			  		<input class="state" id="endState" type="text" placeholder="DC">
+			  		<br>
+			  		<!-- <a href="mapPage.html"> -->
+			  		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
+		</nav>
 
-<div class="alert alert-success consoleData center" role="alert" id="currentDirections">Starting Location: Test   Ending Location: Test</div>
-
-	<nav class="navbar navbar-default console">
-  <div class="container-fluid">
-   
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        
-        <div class="dropup bottomNavStyle">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Trip Weather Info
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <div id="consoleContainer">
-            	<h1 class="center consoleStructure consoleTitle">Trip Weather Data</h1>
-            	<div class="container-fluid">
-            		<table class = "table-responsive table-striped table-bordered" id = "tripWeather">
-            			<tr class = "table-header"> 
-							<td>Avatars</td>
-							<td>City</td>
-							<td>Weather</td>
-							<td>Temperature</td>
-							<td>Humidity</td>
-							<td>Wind Speed</td>
-            			</tr>
-						
-            		</table>
-            	</div>
-            	
-            </div>
-          </ul>
-        </div>
-
-      </ul>
-      
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-        </div>
-      </form>
-      <button onclick="quitScreenAction()" type="quit" class="btn btn-danger quitBtn">Quit</button>
-      
-
-
-
-
-    <div class="container mainContainer" id="quitScreen">
-		<div class="title">
-  			<h1 class="center">Title</h1>
-		</div>
-		<h3>Start Location</h3>
-  		<input class="city" id="startCity" type="text" name="city" placeholder="Charlotte">
-  		<input class="state" id="startState" type="text" placeholder="NC">
-  		<br>
-  		<h3>Ending Location</h3>
-  		<input class="city" id="endCity" type="text" name="state" placeholder="Washington">
-  		<input class="state" id="endState" type="text" placeholder="DC">
-  		<br>
-  		<!-- <a href="mapPage.html"> -->
-  		<button class="btn-primary launchBtn" id="launch">Launch</button><!-- </a> -->
-	</div>
-
-
-	 </div>
-
-</nav>
-
-
-
-	<div class="container mainContainerDone">
-		<!-- <dir class="row">
-			<div class="col-sm-12"> -->
-		<div class="quitTitle">
-  			<h1 class="center">Quit</h1>
-		</div>
-		
-		<div id="arrived" class="center">
-			<h2 class="arrivedText">
-			You Have Arrived
-		</h2>
-		<i class="glyphicon glyphicon-road road-icon center"></i>
-		</div>
-		
-					<a href="rate.html" target="_blank"><button class="btn-warning rate">Rate</button></a>
-	
-					<a><button class="btn-primary newLaunch" onclick="launch()">New Location</button></a>
-
-					
-	</div>
+		<!--Container which houses our quit page which will allow users to rate or start a new trip-->
+		<div class="container mainContainerDone">
+			<div class="quitTitle">
+	  			<h1 class="center">Quit</h1>
+			</div>
 			
-	</div>
-  		
-	</div>
-	
-
-<script src="assets/javascript/javascript.js"></script>
-<script type="text/javascript">
-		$(".mapImg").hide();
-		$(".consoleData").hide();
-		$(".console").hide();
-		
-
-	// $("#reviewPage").hide();
-	function firstTheme() {
-		$("body").css("background-image", "url(https://t4.ftcdn.net/jpg/00/68/82/57/240_F_68825774_isOmOjQrm2sHgPeO5j1dmP8tGKBpT6j1.jpg)");
-		$(".title, .quit").css("background", "linear-gradient(to right, white, #99ebff, white)");
-		$(".launchBtn, .newLaunch, .quit").css("background", "#2e71df");
-	}
-
-	function secondTheme() {
-		$("body").css("background-image", "url(http://onpape.com/data/onpape.com-85660201.jpg)");
-		$(".title, .quit").css("background", "linear-gradient(to right, white, gray, white)");
-		$(".launchBtn, .newLaunch, .quit").css("background-image", "url(http://www.peacepond.com/Lightning.jpg)");
-	}
-
-	function thirdTheme() {
-		$("body").css("background-image", "url(http://wallpapercave.com/wp/qQa5Pd7.jpg)");
-		$(".title, .quit").css("background", "linear-gradient(to right, white, yellow, white)");
-		$(".launchBtn, .newLaunch, .quit").css("background-image", "url(https://fs.bitcoinmagazine.com/img/images/atomic-swaps-how-the-lightning-network-exten.max-800x800.jpg)");
-	}
-
-	function launchMap() {
-		$(".mainContainer").hide();
-		$(".rateContainer").hide();
-		$(".nav-top").hide();
-		$(".mapImg").show();
-		$(".consoleData").show();
-		$(".console").show();
-	}
-
-	$("#quitScreen").hide();
-	$(".mainContainerDone").hide();
-	function quitScreenAction() {
-		$(".mapImg").hide();
-		$(".consoleData").hide();
-		$(".console").hide();
-		$("#quitScreen").show();
-		$(".nav-top").show();
-		$(".mainContainerDone").show();
-	}
-
-	function launch() {
-		$(".mainContainerDone").hide();
-		$(".mainContainer").show();
-	}
+			<div id="arrived" class="center">
+				<h2 class="arrivedText">You Have Arrived</h2>
+				<i class="glyphicon glyphicon-road road-icon center"></i>
+			</div>
+			<a href="rate.html" target="_blank"><button class="btn-warning rate">Rate</button></a>
+			<a><button class="btn-primary newLaunch" onclick="launch()">New Location</button></a>					
+		</div>
 
 
-</script>
-</body>
+		<script src="assets/javascript/javascript.js"></script>
+		<script type="text/javascript">
+			$(".mapImg").hide();
+			$(".consoleData").hide();
+			$(".console").hide();
+			
+
+		// $("#reviewPage").hide();
+		function firstTheme() {
+			$("body").css("background-image", "url(https://t4.ftcdn.net/jpg/00/68/82/57/240_F_68825774_isOmOjQrm2sHgPeO5j1dmP8tGKBpT6j1.jpg)");
+			$(".title, .quit").css("background", "linear-gradient(to right, white, #99ebff, white)");
+			$(".launchBtn, .newLaunch, .quit").css("background", "#2e71df");
+		}
+		//Calls second theme
+		function secondTheme() {
+			$("body").css("background-image", "url(http://onpape.com/data/onpape.com-85660201.jpg)");
+			$(".title, .quit").css("background", "linear-gradient(to right, white, gray, white)");
+			$(".launchBtn, .newLaunch, .quit").css("background-image", "url(http://www.peacepond.com/Lightning.jpg)");
+		}
+		//Calls third theme
+		function thirdTheme() {
+			$("body").css("background-image", "url(http://wallpapercave.com/wp/qQa5Pd7.jpg)");
+			$(".title, .quit").css("background", "linear-gradient(to right, white, yellow, white)");
+			$(".launchBtn, .newLaunch, .quit").css("background-image", "url(https://fs.bitcoinmagazine.com/img/images/atomic-swaps-how-the-lightning-network-exten.max-800x800.jpg)");
+		}
+		//Launches/hides containers map
+		function launchMap() {
+			$(".mainContainer").hide();
+			$(".rateContainer").hide();
+			$(".nav-top").hide();
+			$(".mapImg").show();
+			$(".consoleData").show();
+			$(".console").show();
+		}
+		//Function for loading the quit screen
+		function quitScreenAction() {
+			$(".mapImg").hide();
+			$(".consoleData").hide();
+			$(".console").hide();
+			$("#quitScreen").show();
+			$(".nav-top").show();
+			$(".mainContainerDone").show();
+		}
+		//Funciton for launching new map call
+		function launch() {
+			$(".mainContainerDone").hide();
+			$(".mainContainer").show();
+		}
+		</script>
+	</body>
 </html>
